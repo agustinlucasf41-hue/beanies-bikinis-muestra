@@ -1,0 +1,72 @@
+:root {
+  /* Color */
+  --bb-ink-950: #0b0907;
+  --bb-charcoal-900: #17120e;
+  --bb-charcoal-800: #241b15;
+  --bb-bone-100: #ede3d2;
+  --bb-bone-300: #bfb3a1;
+  --bb-gold-500: #f5b510;
+  --bb-amber-500: #f2a93b;
+  --bb-hibiscus-500: #d94f68;
+  --bb-mural-green-600: #567b38;
+  --bb-turquoise-600: #397a78;
+  --bb-wood-700: #6b3b22;
+  --bb-red-700: #a7382d;
+
+  /* Semantic */
+  --bb-bg: var(--bb-charcoal-900);
+  --bb-bg-deep: var(--bb-ink-950);
+  --bb-surface: var(--bb-charcoal-800);
+  --bb-text: var(--bb-bone-100);
+  --bb-text-muted: var(--bb-bone-300);
+  --bb-action: var(--bb-gold-500);
+  --bb-action-text: var(--bb-ink-950);
+  --bb-focus: var(--bb-bone-100);
+  --bb-danger: var(--bb-red-700);
+
+  /* Typography */
+  --bb-font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --bb-font-body: "Barlow", "Segoe UI", sans-serif;
+  --bb-display: clamp(3.5rem, 10vw, 8.5rem);
+  --bb-h1: clamp(2.8rem, 7vw, 6rem);
+  --bb-h2: clamp(2.4rem, 6vw, 5rem);
+  --bb-title: clamp(1.4rem, 2.6vw, 2rem);
+  --bb-body: clamp(1rem, 1.2vw, 1.125rem);
+  --bb-label: 0.78rem;
+
+  /* Space */
+  --bb-space-1: 0.5rem;
+  --bb-space-2: 1rem;
+  --bb-space-3: 1.5rem;
+  --bb-space-4: 2rem;
+  --bb-space-5: 3rem;
+  --bb-space-6: 4rem;
+  --bb-space-7: 6rem;
+  --bb-gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --bb-container: 80rem;
+
+  /* Shape */
+  --bb-radius-sm: 0.25rem;
+  --bb-radius-md: 0.5rem;
+  --bb-border-subtle: 1px solid rgb(237 227 210 / 18%);
+
+  /* Depth */
+  --bb-shadow-bar: 0 18px 60px rgb(0 0 0 / 36%);
+  --bb-glow-amber: 0 0 48px rgb(242 169 59 / 16%);
+
+  /* Motion */
+  --bb-duration-fast: 160ms;
+  --bb-duration-base: 260ms;
+  --bb-duration-scene: 520ms;
+  --bb-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --bb-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --bb-duration-fast: 1ms;
+    --bb-duration-base: 1ms;
+    --bb-duration-scene: 1ms;
+  }
+}
+

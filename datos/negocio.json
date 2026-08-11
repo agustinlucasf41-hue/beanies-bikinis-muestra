@@ -1,0 +1,86 @@
+{
+  "nombre": "Beanies & Bikinis",
+  "bajada": "Restaurant · Bar",
+  "lema": {
+    "es": "El Bar de Pucón",
+    "en": "Pucón's Bar"
+  },
+  "descripcion": {
+    "es": "Gorros de lana y bikinis. El volcán y el lago. Frío y calor en el mismo bar, desde que abrimos hasta las tres de la mañana.",
+    "en": "Wool beanies and bikinis. The volcano and the lake. Cold and warm in the same bar, from opening until three in the morning."
+  },
+  "direccion": "Fresia 477, Pucón, Araucanía, Chile",
+  "telefono": "+56452441109",
+  "email": "beaniesybikinis@gmail.com",
+  "horario": {
+    "es": "Todos los días de 17:00 a 03:00",
+    "en": "Every day from 5 PM to 3 AM"
+  },
+  "apertura": {
+    "zona": "America/Santiago",
+    "abre": "17:00",
+    "cierra": "03:00",
+    "dias": [0, 1, 2, 3, 4, 5, 6]
+  },
+  "promo": {
+    "activa": true,
+    "texto": {
+      "es": "2x1 en cocktails y tragos · todos los días · a toda hora",
+      "en": "2-for-1 cocktails & drinks · every day · all day long"
+    }
+  },
+  "pedidos": {
+    "modo": "lista",
+    "whatsapp": "",
+    "minimo": 0,
+    "reparto": 0,
+    "nota": {
+      "es": "Arma tu lista y mira el total antes de sentarte.",
+      "en": "Build your list and check the total before you sit down."
+    }
+  },
+  "redes": {
+    "instagram": "https://www.instagram.com/beanies_bikinis",
+    "facebook": "https://www.facebook.com/p/BEANIES-BIKINIS-100049124036837/",
+    "tripadvisor": "https://www.tripadvisor.com/Restaurant_Review-g294297-d7323143-Reviews-BEANIES_BIKINIS_Pub_Restaurant-Pucon_Araucania_Region.html",
+    "spotify": "https://open.spotify.com/playlist/02ea0NJr5jqMBbXPqTo2NP"
+  },
+  "musica": {
+    "titulo": {
+      "es": "Lo que suena en la barra",
+      "en": "What's playing at the bar"
+    },
+    "texto": {
+      "es": "98 canciones de reggae, funk, ska y hip-hop chileno. Makiza, Los Tetas, Cultura Profética, The Skints, Manu Chao.",
+      "en": "98 tracks of reggae, funk, ska and Chilean hip-hop. Makiza, Los Tetas, Cultura Profética, The Skints, Manu Chao."
+    }
+  },
+  "reconocimientos": [
+    {
+      "es": "#2 entre los bares de Pucón en Tripadvisor",
+      "en": "#2 among Pucón's bars on Tripadvisor"
+    },
+    {
+      "es": "4,1 sobre 5 en Tripadvisor",
+      "en": "4.1 out of 5 on Tripadvisor"
+    },
+    {
+      "es": "La Gringa, votada la mejor hamburguesa de Pucón",
+      "en": "The Gringa, voted Pucón's best burger"
+    }
+  ],
+  "colores": {
+    "carbon": "#17120E",
+    "tungsteno": "#F2A93B",
+    "dorado": "#F5C518",
+    "verde": "#3E7C3A",
+    "rojo": "#C1272D",
+    "hibisco": "#E8547C",
+    "hueso": "#EDE3D2",
+    "nota": "Sacados de las fotos del local, no de la carta impresa. El bar es madera oscura y luz de tungsteno."
+  },
+  "fotos": {
+    "local": [],
+    "nota": "Pendientes de que el usuario las aporte. La web funciona sin ellas."
+  }
+}

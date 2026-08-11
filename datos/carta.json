@@ -1,0 +1,2309 @@
+{
+  "moneda": "$",
+  "actualizado": "2026-08-10",
+  "fuente": "Carta oficial en PDF, 8 páginas, enlazada desde la bio de Instagram",
+  "categorias": [
+    {
+      "id": "compartir",
+      "nombre": {
+        "es": "Para compartir",
+        "en": "To share"
+      },
+      "nota": {
+        "es": "",
+        "en": ""
+      },
+      "productos": [
+        {
+          "id": "ceviche-salmon",
+          "numero": "01",
+          "nombre": {
+            "es": "Ceviche de Salmón",
+            "en": "Salmon Ceviche"
+          },
+          "desc": {
+            "es": "Salmón, palta, cebolla morada, cilantro y leche de tigre, acompañado de crostinis.",
+            "en": "Salmon, avocado, red onions, cilantro and tiger's milk with crostinis."
+          },
+          "precio": 12900,
+          "foto": "comida-ceviche.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "crudo",
+          "numero": "02",
+          "nombre": {
+            "es": "Crudo",
+            "en": "Beef Tartare"
+          },
+          "desc": {
+            "es": "Carne de res, pepinillo dill, cebolla morada, alcaparras, cilantro, jugo de limón, ají verde y un toque de aceite de oliva, acompañado de crostinis.",
+            "en": "Beef, dill pickles, red onions, capers, cilantro, lemon juice, green pepper and a touch of olive oil with crostinis."
+          },
+          "precio": 12900,
+          "foto": "comida-tartaro.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "ceviche-champinon",
+          "numero": "03",
+          "nombre": {
+            "es": "Ceviche de Champiñón",
+            "en": "Mushroom Ceviche"
+          },
+          "desc": {
+            "es": "Champiñones, palta, mango, cilantro, pimentón, cebolla morada y leche de tigre, acompañados de crostinis.",
+            "en": "Mushrooms, avocado, mango, cilantro, peppers, red onions and tiger's milk with crostinis."
+          },
+          "precio": 10400,
+          "foto": "comida-ceviche.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "camarones-pilpil",
+          "numero": "04",
+          "nombre": {
+            "es": "Camarones al Pilpil",
+            "en": "Shrimp al Pilpil"
+          },
+          "desc": {
+            "es": "Camarones y champiñones salteados con ají cacho de cabra, ajo y cilantro, acompañados de tostadas.",
+            "en": "Sauteed shrimp and mushrooms with chili goat, garlic and cilantro with toast."
+          },
+          "precio": 12900,
+          "foto": "comida-sarten.webp",
+          "etiquetas": [
+            "picante"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "papas-bacon",
+          "numero": "05",
+          "nombre": {
+            "es": "Papas Bacon",
+            "en": "Bacon Fries"
+          },
+          "desc": {
+            "es": "Papas fritas, tocino crispy, ciboulette y salsa de queso cheddar.",
+            "en": "French fries, crispy bacon, ciboulette and cheddar cheese sauce."
+          },
+          "precio": 10400,
+          "foto": "comida-papas-fuente.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "papas-capresse",
+          "numero": "06",
+          "nombre": {
+            "es": "Papas Capresse",
+            "en": "Capresse Fries"
+          },
+          "desc": {
+            "es": "Papas fritas, pesto de albahaca, tomates y queso mozzarella.",
+            "en": "French fries, basil pesto, tomatoes and mozzarella cheese."
+          },
+          "precio": 9900,
+          "foto": "comida-papas-fuente.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "papas-blue",
+          "numero": "07",
+          "nombre": {
+            "es": "Papas Blue",
+            "en": "Blue Fries"
+          },
+          "desc": {
+            "es": "Papas fritas, salsa de queso azul, champiñón, nuez y ciboulette.",
+            "en": "French fries, blue cheese sauce, mushroom, walnuts and chives."
+          },
+          "precio": 9900,
+          "foto": "comida-papas-fuente.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "papas-fritas",
+          "numero": "08",
+          "nombre": {
+            "es": "Papas Fritas",
+            "en": "French Fries"
+          },
+          "desc": {
+            "es": "Papas fritas acompañadas de Salsa Beanies.",
+            "en": "French fries with Beanies' Sauce."
+          },
+          "precio": 8400,
+          "foto": "comida-papas-cono.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "chorrillana",
+          "numero": "09",
+          "nombre": {
+            "es": "Chorrillana",
+            "en": "Chorrillana"
+          },
+          "desc": {
+            "es": "Carne de res, pollo al ajillo, longaniza artesanal, cebolla caramelizada, huevos y papas fritas.",
+            "en": "Beef, garlic chicken, artisan sausage, caramelized onion, eggs and French fries."
+          },
+          "precio": 15400,
+          "foto": "comida-chorrillana.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "chorrillana-vegetariana",
+          "numero": "10",
+          "nombre": {
+            "es": "Chorrillana Vegetariana",
+            "en": "Vegetarian Chorrillana"
+          },
+          "desc": {
+            "es": "Papas fritas, queso fundido, salteado de champiñones, choclo cóctel, palmito, pimentón, tomate cherry y ciboulette.",
+            "en": "French fries, melted cheese, sautéed mushrooms, cocktail corn, heart of palm, paprika, cherry tomato and chives."
+          },
+          "precio": 13400,
+          "foto": "comida-chorrillana.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "pizzas",
+      "nombre": {
+        "es": "Pizzas",
+        "en": "Pizzas"
+      },
+      "nota": {
+        "es": "Todas son con masa a la piedra, salsa de tomate casera y queso mozzarella.",
+        "en": "All pizzas are made with thin crust, tomato sauce and mozzarella cheese."
+      },
+      "productos": [
+        {
+          "id": "pizza-napolitana",
+          "numero": "11",
+          "nombre": {
+            "es": "Napolitana",
+            "en": "Napolitana"
+          },
+          "desc": {
+            "es": "Tomate, jamón, aceitunas y orégano.",
+            "en": "Tomato, ham, olives and oregano."
+          },
+          "precio": 11900,
+          "foto": "comida-pizza.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pizza-capresse",
+          "numero": "12",
+          "nombre": {
+            "es": "Capresse",
+            "en": "Capresse"
+          },
+          "desc": {
+            "es": "Tomate cherry, pesto de albahaca y cebolla morada.",
+            "en": "Cherry tomato, basil pesto and red onions."
+          },
+          "precio": 11400,
+          "foto": "comida-pizza.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "pizza-calabresa",
+          "numero": "13",
+          "nombre": {
+            "es": "Calabresa",
+            "en": "Calabresa"
+          },
+          "desc": {
+            "es": "Salame, aceitunas y orégano.",
+            "en": "Salami, olives and oregano."
+          },
+          "precio": 11400,
+          "foto": "comida-pizza.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pizza-luco",
+          "numero": "14",
+          "nombre": {
+            "es": "Luco",
+            "en": "Luco"
+          },
+          "desc": {
+            "es": "Carne y cebolla.",
+            "en": "Meat and onions."
+          },
+          "precio": 12900,
+          "foto": "comida-pizza.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pizza-primavera",
+          "numero": "15",
+          "nombre": {
+            "es": "Primavera",
+            "en": "Primavera"
+          },
+          "desc": {
+            "es": "Choclo, champiñón, pimentones salteados y cebolla.",
+            "en": "Corn, mushrooms, sautéed peppers and onions."
+          },
+          "precio": 11900,
+          "foto": "comida-pizza.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "pizza-rockera",
+          "numero": "16",
+          "nombre": {
+            "es": "Rockera",
+            "en": "Rockera"
+          },
+          "desc": {
+            "es": "Queso roquefort, ciboulette, pera caramelizada y nueces.",
+            "en": "Roquefort cheese, chives, caramelised pears and walnuts."
+          },
+          "precio": 11900,
+          "foto": "comida-pizza.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "pizza-jamon-serrano",
+          "numero": "17",
+          "nombre": {
+            "es": "Jamón Serrano",
+            "en": "Serrano Ham"
+          },
+          "desc": {
+            "es": "Rúcula, jamón serrano y cebolla morada.",
+            "en": "Arugula, serrano ham and red onions."
+          },
+          "precio": 11900,
+          "foto": "comida-pizza.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pizza-camarona",
+          "numero": "18",
+          "nombre": {
+            "es": "Camarona",
+            "en": "Camarona"
+          },
+          "desc": {
+            "es": "Camarones salteados, tomates cherry, champiñones y ciboulette.",
+            "en": "Sautéed prawns, cherry tomatoes, mushrooms and chives."
+          },
+          "precio": 13900,
+          "foto": "comida-pizza.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pizza-barbecue",
+          "numero": "19",
+          "nombre": {
+            "es": "Barbecue",
+            "en": "Barbecue"
+          },
+          "desc": {
+            "es": "Pollo, tocino, cebolla acaramelada y salsa bbq.",
+            "en": "Chicken, bacon, caramelised onions and bbq sauce."
+          },
+          "precio": 12900,
+          "foto": "comida-pizza.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pizza-pepperoni",
+          "numero": "20",
+          "nombre": {
+            "es": "Pepperoni",
+            "en": "Pepperoni"
+          },
+          "desc": {
+            "es": "Pepperoni y queso mozzarella.",
+            "en": "Pepperoni and mozzarella cheese."
+          },
+          "precio": 11400,
+          "foto": "comida-pizza.webp",
+          "etiquetas": [],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "quesadillas",
+      "nombre": {
+        "es": "Quesadillas",
+        "en": "Quesadillas"
+      },
+      "nota": {
+        "es": "Todas las quesadillas son con tortilla de trigo y queso mozzarella.",
+        "en": "All quesadillas made with wheat tortillas and mozzarella cheese."
+      },
+      "productos": [
+        {
+          "id": "quesadilla-napolitana",
+          "numero": "21",
+          "nombre": {
+            "es": "Napolitana",
+            "en": "Napolitana"
+          },
+          "desc": {
+            "es": "Tomate, jamón, aceitunas y orégano, acompañadas de Salsa Beanies.",
+            "en": "Tomato, ham, olives and oregano with Beanies' Sauce."
+          },
+          "precio": 7900,
+          "foto": "comida-quesadilla.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "quesadilla-luco",
+          "numero": "22",
+          "nombre": {
+            "es": "Luco",
+            "en": "Luco"
+          },
+          "desc": {
+            "es": "Carne y cebolla, acompañadas de Salsa Beanies.",
+            "en": "Meat and onions with Beanies' Sauce."
+          },
+          "precio": 8400,
+          "foto": "comida-quesadilla.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "quesadilla-vegetariana",
+          "numero": "23",
+          "nombre": {
+            "es": "Vegetariana",
+            "en": "Vegetarian"
+          },
+          "desc": {
+            "es": "Champiñón, choclo, pimentones salteados y cebolla, acompañadas de Salsa Beanies.",
+            "en": "Mushrooms, corn, sautéed peppers and onions with Beanies' Sauce."
+          },
+          "precio": 8400,
+          "foto": "comida-quesadilla.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "quesadilla-setas",
+          "numero": "24",
+          "nombre": {
+            "es": "De Setas",
+            "en": "Mushroom"
+          },
+          "desc": {
+            "es": "Champiñones, choclo y ciboulette, acompañadas de Salsa Beanies.",
+            "en": "Mushrooms, corn and chives with Beanies' Sauce."
+          },
+          "precio": 7900,
+          "foto": "comida-quesadilla.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "sandwiches",
+      "nombre": {
+        "es": "Sandwiches",
+        "en": "Sandwiches"
+      },
+      "nota": {
+        "es": "Tú eliges la base: hamburguesa casera, hamburguesa vegetariana, lomo de cerdo o churrasco.",
+        "en": "You can choose: homemade burger, vegetarian burger, pork loin or steak."
+      },
+      "productos": [
+        {
+          "id": "gringa",
+          "numero": "25",
+          "nombre": {
+            "es": "Gringa",
+            "en": "Gringa"
+          },
+          "desc": {
+            "es": "¡Votada como la mejor hamburguesa de Pucón! Lechuga, palta, tomate, cebolla caramelizada, queso y pepinillo dill.",
+            "en": "Voted Pucón's Nº1 burger! Lettuce, avocado, tomato, caramelised onions, cheese and dill pickles."
+          },
+          "precio": 10900,
+          "foto": "comida-hamburguesa.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "master",
+          "numero": "26",
+          "nombre": {
+            "es": "Master",
+            "en": "Master"
+          },
+          "desc": {
+            "es": "Cebolla caramelizada, queso, champiñones, tocino y huevo frito.",
+            "en": "Caramelised onions, cheese, mushrooms, bacon and fried egg."
+          },
+          "precio": 10900,
+          "foto": "comida-hamburguesa.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "beanies",
+          "numero": "27",
+          "nombre": {
+            "es": "Beanies",
+            "en": "Beanies"
+          },
+          "desc": {
+            "es": "Mix de hojas verdes, tomate, cebolla morada, tocino ahumado, queso cheddar y pepinillo dill casero.",
+            "en": "Mix of salad greens, tomato, red onions, smoked bacon, cheddar cheese and homemade dill pickles."
+          },
+          "precio": 10900,
+          "foto": "comida-hamburguesa.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "jack",
+          "numero": "28",
+          "nombre": {
+            "es": "Jack",
+            "en": "Jack"
+          },
+          "desc": {
+            "es": "Tocino, queso fundido, mix de hojas verdes, cebolla morada y pepinillo dill casero, bañada en salsa Jack Daniel's de la casa.",
+            "en": "Bacon, melted mozzarella cheese, mix of salad greens, red onions and homemade dill pickles, dressed with homemade Jack Daniel's sauce."
+          },
+          "precio": 10900,
+          "foto": "comida-hamburguesa.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "blue-cheese",
+          "numero": "29",
+          "nombre": {
+            "es": "Blue Cheese",
+            "en": "Blue Cheese"
+          },
+          "desc": {
+            "es": "Queso azul, cebolla caramelizada, pepinillos dill y mix de hojas verdes.",
+            "en": "Blue cheese, caramelised onions, dill pickles and mix of salad greens."
+          },
+          "precio": 10400,
+          "foto": "comida-hamburguesa.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "del-huerto",
+          "numero": "30",
+          "nombre": {
+            "es": "Del Huerto",
+            "en": "Del Huerto"
+          },
+          "desc": {
+            "es": "Palta, rúcula, pepino, tomate confitado, aros de cebolla morada y pesto de albahaca.",
+            "en": "Avocado, cucumber, candied tomato, red onion rings and basil pesto."
+          },
+          "precio": 9900,
+          "foto": "comida-sandwich.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "italiana",
+          "numero": "31",
+          "nombre": {
+            "es": "Italiana",
+            "en": "Italiana"
+          },
+          "desc": {
+            "es": "Palta, tomate y mayonesa casera.",
+            "en": "Avocado, tomato and homemade mayonnaise."
+          },
+          "precio": 9900,
+          "foto": "comida-sandwich.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "chacarero",
+          "numero": "32",
+          "nombre": {
+            "es": "Chacarero",
+            "en": "Chacarero"
+          },
+          "desc": {
+            "es": "Tomate, porotos verdes, ají verde y mayonesa casera.",
+            "en": "Tomato, green beans, green pepper and homemade mayonnaise."
+          },
+          "precio": 9900,
+          "foto": "comida-sandwich.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "barros-luco",
+          "numero": "33",
+          "nombre": {
+            "es": "Barros Luco",
+            "en": "Barros Luco"
+          },
+          "desc": {
+            "es": "Carne y queso fundido.",
+            "en": "Meat and melted cheese."
+          },
+          "precio": 8900,
+          "foto": "comida-hamburguesa.webp",
+          "etiquetas": [],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "agregados",
+      "nombre": {
+        "es": "Agregados",
+        "en": "Extras"
+      },
+      "nota": {
+        "es": "",
+        "en": ""
+      },
+      "productos": [
+        {
+          "id": "agregado-4400",
+          "numero": null,
+          "nombre": {
+            "es": "Hamburguesa, carne, lomo de cerdo o camarones",
+            "en": "Hamburger, meat, pork loin or shrimp"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 4400,
+          "foto": "comida-salsa.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "agregado-3900",
+          "numero": null,
+          "nombre": {
+            "es": "Palta, pollo, tocino, queso mozzarella, queso azul o jamón serrano",
+            "en": "Avocado, chicken, bacon, mozzarella cheese, blue cheese or serrano ham"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 3900,
+          "foto": "comida-salsa.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "agregado-2900",
+          "numero": null,
+          "nombre": {
+            "es": "Champiñón, salame, jamón, queso cheddar o mango",
+            "en": "Mushroom, salami, ham, cheddar cheese or mango"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 2900,
+          "foto": "comida-salsa.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "agregado-2400",
+          "numero": null,
+          "nombre": {
+            "es": "Crostinis, tomate, pepinillo, lechuga, rúcula, choclo, pera caramelizada, cebolla caramelizada, huevo frito, pimentón, aceituna o alcaparras",
+            "en": "Crostinis, tomato, dill pickles, lettuce, arugula, corn, caramelised pears, caramelised onions, fried egg, peppers, olives or capers"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 2400,
+          "foto": "comida-salsa.webp",
+          "etiquetas": [],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "barra-beanies",
+      "nombre": {
+        "es": "La Barra de Beanies",
+        "en": "The Beanies Bar"
+      },
+      "nota": {
+        "es": "Nuestros cócteles de autor. 2x1 todos los días, a toda hora.",
+        "en": "Our signature cocktails. 2-for-1 every day, all day long."
+      },
+      "productos": [
+        {
+          "id": "apple-pear-fresh",
+          "numero": null,
+          "nombre": {
+            "es": "Apple / Pear Fresh",
+            "en": "Apple / Pear Fresh"
+          },
+          "desc": {
+            "es": "Vodka, manzana verde o pera y jengibre macerados, toque de limón sutil y ginger ale.",
+            "en": "Vodka, macerated green apple or pear and ginger, a subtle touch of lemon and ginger ale."
+          },
+          "precio": 10900,
+          "foto": "barra-apple-pear-fresh.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "beanies-lemonade",
+          "numero": null,
+          "nombre": {
+            "es": "Beanies Lemonade",
+            "en": "Beanies Lemonade"
+          },
+          "desc": {
+            "es": "Vodka, jengibre macerado, jugo de limón y agua mineral.",
+            "en": "Vodka, macerated ginger, lemon juice and sparkling water."
+          },
+          "precio": 10900,
+          "foto": "barra-beanies-lemonade.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "blue-hawai",
+          "numero": null,
+          "nombre": {
+            "es": "Blue Hawai",
+            "en": "Blue Hawaii"
+          },
+          "desc": {
+            "es": "Curaçao blue, jugo de piña, ron dorado, vodka y goma.",
+            "en": "Blue curaçao, pineapple juice, golden rum, vodka and gum syrup."
+          },
+          "precio": 10900,
+          "foto": "barra-blue-hawai.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "bikini-spritz",
+          "numero": null,
+          "nombre": {
+            "es": "Bikini Spritz",
+            "en": "Bikini Spritz"
+          },
+          "desc": {
+            "es": "Espumante, licor de cassis, frutos rojos y hojas de menta.",
+            "en": "Sparkling wine, cassis liqueur, red berries and mint leaves."
+          },
+          "precio": 10900,
+          "foto": "barra-bikini-spritz.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "charlie-gin",
+          "numero": null,
+          "nombre": {
+            "es": "Charlie Gin",
+            "en": "Charlie Gin"
+          },
+          "desc": {
+            "es": "Gin, agua tónica, jugo de naranja y limón, hojas de menta.",
+            "en": "Gin, tonic water, orange and lemon juice, mint leaves."
+          },
+          "precio": 10900,
+          "foto": "barra-charlie-gin.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "cucumber-ice",
+          "numero": null,
+          "nombre": {
+            "es": "Cucumber Ice",
+            "en": "Cucumber Ice"
+          },
+          "desc": {
+            "es": "Vodka, pepino, jugo de limón y agua mineral.",
+            "en": "Vodka, cucumber, lemon juice and sparkling water."
+          },
+          "precio": 10900,
+          "foto": "barra-cucumber-ice.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "habana-soldier",
+          "numero": null,
+          "nombre": {
+            "es": "Habana Soldier",
+            "en": "Habana Soldier"
+          },
+          "desc": {
+            "es": "Ron Havana, frutillas y maracuyá, limón sutil y agua mineral.",
+            "en": "Havana rum, strawberries and passion fruit, a subtle touch of lemon and sparkling water."
+          },
+          "precio": 10900,
+          "foto": "barra-habana-soldier.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "jugle-bird",
+          "numero": null,
+          "nombre": {
+            "es": "Jugle Bird",
+            "en": "Jungle Bird"
+          },
+          "desc": {
+            "es": "Ron dorado, Campari, jugo de piña, jugo de limón y goma.",
+            "en": "Golden rum, Campari, pineapple juice, lemon juice and gum syrup."
+          },
+          "precio": 10900,
+          "foto": "barra-jugle-bird.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "pink-lady",
+          "numero": null,
+          "nombre": {
+            "es": "Pink Lady",
+            "en": "Pink Lady"
+          },
+          "desc": {
+            "es": "Crema, granadina y gin.",
+            "en": "Cream, grenadine and gin."
+          },
+          "precio": 10900,
+          "foto": "barra-pink-lady.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "red-poison",
+          "numero": null,
+          "nombre": {
+            "es": "Red Poison",
+            "en": "Red Poison"
+          },
+          "desc": {
+            "es": "Vodka, ginger ale, albahaca, frutos rojos y limón sutil.",
+            "en": "Vodka, ginger ale, basil, red berries and a subtle touch of lemon."
+          },
+          "precio": 10900,
+          "foto": "barra-red-poison.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "clasicos",
+      "nombre": {
+        "es": "Los Clásicos",
+        "en": "The Classics"
+      },
+      "nota": {
+        "es": "2x1 todos los días, a toda hora.",
+        "en": "2-for-1 every day, all day long."
+      },
+      "productos": [
+        {
+          "id": "amaretto-sour",
+          "numero": null,
+          "nombre": {
+            "es": "Amaretto Sour",
+            "en": "Amaretto Sour"
+          },
+          "desc": {
+            "es": "Amaretto y jugo de limón.",
+            "en": "Amaretto and lemon juice."
+          },
+          "precio": 10400,
+          "foto": "copa-coupe.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "caipirinha",
+          "numero": null,
+          "nombre": {
+            "es": "Caipirinha",
+            "en": "Caipirinha"
+          },
+          "desc": {
+            "es": "Cachaça, limón y azúcar.",
+            "en": "Cachaça, lime and sugar."
+          },
+          "precio": 10400,
+          "foto": "copa-rocas.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "clavo-oxidado",
+          "numero": null,
+          "nombre": {
+            "es": "Clavo Oxidado",
+            "en": "Rusty Nail"
+          },
+          "desc": {
+            "es": "Ballantines, drambuie y clavos de olor.",
+            "en": "Ballantines, Drambuie and cloves."
+          },
+          "precio": 11900,
+          "foto": "copa-rocas.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "clavo-oxidado-jack",
+          "numero": null,
+          "nombre": {
+            "es": "Clavo Oxidado Jack",
+            "en": "Rusty Nail Jack"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 12900,
+          "foto": "copa-rocas.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "daiquiri",
+          "numero": null,
+          "nombre": {
+            "es": "Daiquiri",
+            "en": "Daiquiri"
+          },
+          "desc": {
+            "es": "Ron blanco, triple sec, jugo de limón, azúcar y hielo.",
+            "en": "White rum, triple sec, lemon juice, sugar and ice."
+          },
+          "precio": 10400,
+          "foto": "copa-coupe.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "daiquiri-sabores",
+          "numero": null,
+          "nombre": {
+            "es": "Daiquiri Sabores",
+            "en": "Flavoured Daiquiri"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10900,
+          "foto": "copa-coupe.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "long-island",
+          "numero": null,
+          "nombre": {
+            "es": "Long Island",
+            "en": "Long Island"
+          },
+          "desc": {
+            "es": "Vodka, gin, ron blanco, triple sec, tequila, jugo de limón y Coca-Cola.",
+            "en": "Vodka, gin, white rum, triple sec, tequila, lemon juice and Coca-Cola."
+          },
+          "precio": 10400,
+          "foto": "copa-highball.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "margarita",
+          "numero": null,
+          "nombre": {
+            "es": "Margarita",
+            "en": "Margarita"
+          },
+          "desc": {
+            "es": "Tequila, triple sec, jugo de limón y azúcar.",
+            "en": "Tequila, triple sec, lemon juice and sugar."
+          },
+          "precio": 10400,
+          "foto": "copa-margarita.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "margarita-sabores",
+          "numero": null,
+          "nombre": {
+            "es": "Margarita Sabores",
+            "en": "Flavoured Margarita"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10900,
+          "foto": "copa-margarita.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "mojito",
+          "numero": null,
+          "nombre": {
+            "es": "Mojito",
+            "en": "Mojito"
+          },
+          "desc": {
+            "es": "Menta, jugo de limón, azúcar, ron blanco y soda.",
+            "en": "Mint, lemon juice, sugar, white rum and soda."
+          },
+          "precio": 10400,
+          "foto": "copa-highball.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "mojito-sabores",
+          "numero": null,
+          "nombre": {
+            "es": "Mojito Sabores",
+            "en": "Flavoured Mojito"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10900,
+          "foto": "copa-highball.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "mojito-espumante",
+          "numero": null,
+          "nombre": {
+            "es": "Mojito Espumante",
+            "en": "Sparkling Mojito"
+          },
+          "desc": {
+            "es": "Espumante, menta, jugo de limón, azúcar y soda.",
+            "en": "Sparkling wine, mint, lemon juice, sugar and soda."
+          },
+          "precio": 10400,
+          "foto": "copa-flauta.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "mojito-jager",
+          "numero": null,
+          "nombre": {
+            "es": "Mojito Jager",
+            "en": "Jager Mojito"
+          },
+          "desc": {
+            "es": "Menta, jugo de limón, azúcar, Jägermeister y soda.",
+            "en": "Mint, lemon juice, sugar, Jägermeister and soda."
+          },
+          "precio": 12400,
+          "foto": "copa-highball.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "mojito-jager-sabores",
+          "numero": null,
+          "nombre": {
+            "es": "Mojito Jager Sabores",
+            "en": "Flavoured Jager Mojito"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 12900,
+          "foto": "copa-highball.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "mojito-beer",
+          "numero": null,
+          "nombre": {
+            "es": "Mojito Beer",
+            "en": "Mojito Beer"
+          },
+          "desc": {
+            "es": "Jugo de limón, azúcar y cerveza lager.",
+            "en": "Lemon juice, sugar and lager beer."
+          },
+          "precio": 10400,
+          "foto": "copa-highball.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "negroni",
+          "numero": null,
+          "nombre": {
+            "es": "Negroni",
+            "en": "Negroni"
+          },
+          "desc": {
+            "es": "Gin, vermouth rosso, Campari y zeste de naranja.",
+            "en": "Gin, rosso vermouth, Campari and orange zest."
+          },
+          "precio": 10900,
+          "foto": "copa-rocas.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "negroni-beefeater",
+          "numero": null,
+          "nombre": {
+            "es": "Negroni Beefeater",
+            "en": "Beefeater Negroni"
+          },
+          "desc": {
+            "es": "Gin Beefeater, vermouth rosso, Campari y zeste de naranja.",
+            "en": "Beefeater gin, rosso vermouth, Campari and orange zest."
+          },
+          "precio": 11900,
+          "foto": "copa-rocas.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "padrino",
+          "numero": null,
+          "nombre": {
+            "es": "Padrino",
+            "en": "Godfather"
+          },
+          "desc": {
+            "es": "Amaretto y whisky.",
+            "en": "Amaretto and whisky."
+          },
+          "precio": 10900,
+          "foto": "copa-coupe.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "padrino-jack",
+          "numero": null,
+          "nombre": {
+            "es": "Padrino Jack",
+            "en": "Jack Godfather"
+          },
+          "desc": {
+            "es": "Jack Daniel's n°7 y amaretto.",
+            "en": "Jack Daniel's n°7 and amaretto."
+          },
+          "precio": 11900,
+          "foto": "copa-coupe.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pina-colada",
+          "numero": null,
+          "nombre": {
+            "es": "Piña Colada",
+            "en": "Piña Colada"
+          },
+          "desc": {
+            "es": "Ron blanco, syrup de coco, jugo de piña y crema.",
+            "en": "White rum, coconut syrup, pineapple juice and cream."
+          },
+          "precio": 10400,
+          "foto": "copa-huracan.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pisco-sour",
+          "numero": null,
+          "nombre": {
+            "es": "Pisco Sour",
+            "en": "Pisco Sour"
+          },
+          "desc": {
+            "es": "Pisco, jugo de limón y azúcar.",
+            "en": "Pisco, lemon juice and sugar."
+          },
+          "precio": 10400,
+          "foto": "copa-coupe.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pisco-sour-sabores",
+          "numero": null,
+          "nombre": {
+            "es": "Pisco Sour Sabores",
+            "en": "Flavoured Pisco Sour"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10900,
+          "foto": "copa-coupe.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "ruso-blanco",
+          "numero": null,
+          "nombre": {
+            "es": "Ruso Blanco",
+            "en": "White Russian"
+          },
+          "desc": {
+            "es": "Vodka, licor de café y crema.",
+            "en": "Vodka, coffee liqueur and cream."
+          },
+          "precio": 10400,
+          "foto": "copa-rocas.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "ruso-negro",
+          "numero": null,
+          "nombre": {
+            "es": "Ruso Negro",
+            "en": "Black Russian"
+          },
+          "desc": {
+            "es": "Vodka y licor de café.",
+            "en": "Vodka and coffee liqueur."
+          },
+          "precio": 10400,
+          "foto": "copa-rocas.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "screaming-orgasm",
+          "numero": null,
+          "nombre": {
+            "es": "Screaming Orgasm",
+            "en": "Screaming Orgasm"
+          },
+          "desc": {
+            "es": "Crema irlandesa, vodka, amaretto y licor de café.",
+            "en": "Irish cream, vodka, amaretto and coffee liqueur."
+          },
+          "precio": 10400,
+          "foto": "copa-coupe.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "sex-on-the-beach",
+          "numero": null,
+          "nombre": {
+            "es": "Sex on the Beach",
+            "en": "Sex on the Beach"
+          },
+          "desc": {
+            "es": "Vodka, jugo de piña y frambuesa.",
+            "en": "Vodka, pineapple juice and raspberry."
+          },
+          "precio": 10400,
+          "foto": "copa-huracan.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "tequila-sunrise",
+          "numero": null,
+          "nombre": {
+            "es": "Tequila Sunrise",
+            "en": "Tequila Sunrise"
+          },
+          "desc": {
+            "es": "Tequila, jugo de naranja y granadina.",
+            "en": "Tequila, orange juice and grenadine."
+          },
+          "precio": 10400,
+          "foto": "copa-huracan.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "tom-collins",
+          "numero": null,
+          "nombre": {
+            "es": "Tom Collins",
+            "en": "Tom Collins"
+          },
+          "desc": {
+            "es": "Gin, jugo de limón, azúcar y agua con gas.",
+            "en": "Gin, lemon juice, sugar and sparkling water."
+          },
+          "precio": 10400,
+          "foto": "copa-highball.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "zombie",
+          "numero": null,
+          "nombre": {
+            "es": "Zombie",
+            "en": "Zombie"
+          },
+          "desc": {
+            "es": "Ron dorado, ron blanco, triple sec, jugo de limón, granadina y jugo de piña.",
+            "en": "Golden rum, white rum, triple sec, lemon juice, grenadine and pineapple juice."
+          },
+          "precio": 10400,
+          "foto": "copa-huracan.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "aperol-spritz",
+          "numero": null,
+          "nombre": {
+            "es": "Aperol Spritz / Ramazzotti",
+            "en": "Aperol Spritz / Ramazzotti"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 11400,
+          "foto": "copa-balon.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pear-fresh-absolut",
+          "numero": null,
+          "nombre": {
+            "es": "Pear Fresh Absolut",
+            "en": "Pear Fresh Absolut"
+          },
+          "desc": {
+            "es": "Absolut pera, jengibre macerado, toque de limón sutil, goma y ginger ale.",
+            "en": "Absolut pear, macerated ginger, a subtle touch of lemon, gum syrup and ginger ale."
+          },
+          "precio": 11400,
+          "foto": "copa-highball.webp",
+          "etiquetas": [],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "shooters",
+      "nombre": {
+        "es": "Shooters",
+        "en": "Shooters"
+      },
+      "nota": {
+        "es": "",
+        "en": ""
+      },
+      "productos": [
+        {
+          "id": "b52",
+          "numero": null,
+          "nombre": {
+            "es": "B-52",
+            "en": "B-52"
+          },
+          "desc": {
+            "es": "Licor de café, crema irlandesa y triple sec.",
+            "en": "Coffee liqueur, Irish cream and triple sec."
+          },
+          "precio": 3900,
+          "foto": "especial-chupitos.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "coca-liquida",
+          "numero": null,
+          "nombre": {
+            "es": "Coca Líquida",
+            "en": "Liquid Coke"
+          },
+          "desc": {
+            "es": "Vodka, tequila y curaçao.",
+            "en": "Vodka, tequila and curaçao."
+          },
+          "precio": 3900,
+          "foto": "especial-chupitos.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "cucaracha",
+          "numero": null,
+          "nombre": {
+            "es": "Cucaracha",
+            "en": "Cucaracha"
+          },
+          "desc": {
+            "es": "Tequila y licor de café.",
+            "en": "Tequila and coffee liqueur."
+          },
+          "precio": 3900,
+          "foto": "especial-chupitos.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "monkey-brain",
+          "numero": null,
+          "nombre": {
+            "es": "Monkey Brain",
+            "en": "Monkey Brain"
+          },
+          "desc": {
+            "es": "Granadina, crema irlandesa, ron, gin y tequila.",
+            "en": "Grenadine, Irish cream, rum, gin and tequila."
+          },
+          "precio": 3900,
+          "foto": "especial-chupitos.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "oh-yes",
+          "numero": null,
+          "nombre": {
+            "es": "Oh Yes!",
+            "en": "Oh Yes!"
+          },
+          "desc": {
+            "es": "Vodka y licor de cassis.",
+            "en": "Vodka and cassis liqueur."
+          },
+          "precio": 3900,
+          "foto": "especial-chupitos.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "tequilazo",
+          "numero": null,
+          "nombre": {
+            "es": "Tequilazo",
+            "en": "Tequilazo"
+          },
+          "desc": {
+            "es": "Tequila, sal y limón.",
+            "en": "Tequila, salt and lemon."
+          },
+          "precio": 3900,
+          "foto": "especial-chupitos.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "tequilazo-cuervo",
+          "numero": null,
+          "nombre": {
+            "es": "Tequilazo José Cuervo",
+            "en": "José Cuervo Tequilazo"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 4700,
+          "foto": "especial-chupitos.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "shooter-jagermeister",
+          "numero": null,
+          "nombre": {
+            "es": "Jägermeister",
+            "en": "Jägermeister"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 4700,
+          "foto": "especial-chupitos.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "headshot",
+          "numero": null,
+          "nombre": {
+            "es": "Headshot",
+            "en": "Headshot"
+          },
+          "desc": {
+            "es": "Jägermeister, Ballantines y cerveza lager.",
+            "en": "Jägermeister, Ballantines and lager beer."
+          },
+          "precio": 5400,
+          "foto": "especial-headshot.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "ski-shot-5",
+          "numero": null,
+          "nombre": {
+            "es": "Ski Shot 5",
+            "en": "Ski Shot 5"
+          },
+          "desc": {
+            "es": "5 shots a elección, servidos en un esquí.",
+            "en": "5 shots of your choice, served on a ski."
+          },
+          "precio": 16400,
+          "foto": "especial-ski-shot-compacto.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "jarras",
+      "nombre": {
+        "es": "Jarras",
+        "en": "Pitchers"
+      },
+      "nota": {
+        "es": "",
+        "en": ""
+      },
+      "productos": [
+        {
+          "id": "sangria",
+          "numero": null,
+          "nombre": {
+            "es": "Sangría",
+            "en": "Sangria"
+          },
+          "desc": {
+            "es": "Vino tinto, rodajas de naranja y manzana, azúcar y soda.",
+            "en": "Red wine, orange and apple slices, sugar and soda."
+          },
+          "precio": 13900,
+          "foto": "copa-jarra.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "sangria-beanies",
+          "numero": null,
+          "nombre": {
+            "es": "Sangría Beanies",
+            "en": "Beanies Sangria"
+          },
+          "desc": {
+            "es": "Vino blanco, frambuesa, pepino, jengibre y goma.",
+            "en": "White wine, raspberry, cucumber, ginger and gum syrup."
+          },
+          "precio": 13900,
+          "foto": "copa-jarra.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "jarra-gin",
+          "numero": null,
+          "nombre": {
+            "es": "Jarra Gin",
+            "en": "Gin Pitcher"
+          },
+          "desc": {
+            "es": "Gin, rodajas de pepino y limón, hojas de menta y tónica.",
+            "en": "Gin, cucumber and lemon slices, mint leaves and tonic."
+          },
+          "precio": 14400,
+          "foto": "copa-jarra.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "negroni-tonic",
+          "numero": null,
+          "nombre": {
+            "es": "Negroni Tonic",
+            "en": "Negroni Tonic"
+          },
+          "desc": {
+            "es": "Campari, jugo de naranja, rodajas de naranja y tónica.",
+            "en": "Campari, orange juice, orange slices and tonic."
+          },
+          "precio": 14900,
+          "foto": "copa-jarra.webp",
+          "etiquetas": [],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "cervezas",
+      "nombre": {
+        "es": "Cervezas",
+        "en": "Beers"
+      },
+      "nota": {
+        "es": "",
+        "en": ""
+      },
+      "productos": [
+        {
+          "id": "austral-botella",
+          "numero": null,
+          "nombre": {
+            "es": "Cervezas Austral en botella (330cc)",
+            "en": "Austral bottled beers (330cc)"
+          },
+          "desc": {
+            "es": "Lager / Calafate Ale / Patagonia Pale Ale / Yagán Dark Ale.",
+            "en": "Lager / Calafate Ale / Patagonia Pale Ale / Yagán Dark Ale."
+          },
+          "precio": 4200,
+          "foto": "copa-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "schop-calafate",
+          "numero": null,
+          "nombre": {
+            "es": "Schop Austral Calafate (500cc)",
+            "en": "Austral Calafate draft (500cc)"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 5200,
+          "foto": "copa-schop.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "schop-torobayo",
+          "numero": null,
+          "nombre": {
+            "es": "Schop Austral Torobayo (500cc)",
+            "en": "Austral Torobayo draft (500cc)"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 5200,
+          "foto": "copa-schop.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "schop-torres-paine",
+          "numero": null,
+          "nombre": {
+            "es": "Schop Austral Torres del Paine (500cc)",
+            "en": "Austral Torres del Paine draft (500cc)"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 5200,
+          "foto": "copa-schop.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "schop-escudo",
+          "numero": null,
+          "nombre": {
+            "es": "Schop Escudo (500cc)",
+            "en": "Escudo draft (500cc)"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 4400,
+          "foto": "copa-schop.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pitcher-calafate",
+          "numero": null,
+          "nombre": {
+            "es": "Pitcher Austral Calafate",
+            "en": "Austral Calafate pitcher"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 13700,
+          "foto": "especial-pitcher-cerveza.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pitcher-torres-paine",
+          "numero": null,
+          "nombre": {
+            "es": "Pitcher Austral Torres del Paine",
+            "en": "Austral Torres del Paine pitcher"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 13700,
+          "foto": "especial-pitcher-cerveza.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pitcher-torobayo",
+          "numero": null,
+          "nombre": {
+            "es": "Pitcher Austral Torobayo",
+            "en": "Austral Torobayo pitcher"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 13700,
+          "foto": "especial-pitcher-cerveza.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pitcher-escudo",
+          "numero": null,
+          "nombre": {
+            "es": "Pitcher Escudo",
+            "en": "Escudo pitcher"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10900,
+          "foto": "especial-pitcher-cerveza.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "vaso-michelado",
+          "numero": null,
+          "nombre": {
+            "es": "Vaso michelado",
+            "en": "Michelada glass"
+          },
+          "desc": {
+            "es": "Jugo de limón, sal, tabasco, salsa inglesa y merkén.",
+            "en": "Lemon juice, salt, tabasco, Worcestershire sauce and merkén."
+          },
+          "precio": 2000,
+          "foto": "especial-michelado.webp",
+          "etiquetas": [
+            "picante"
+          ],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "tragos",
+      "nombre": {
+        "es": "Tragos",
+        "en": "Spirits"
+      },
+      "nota": {
+        "es": "2x1 todos los días, a toda hora.",
+        "en": "2-for-1 every day, all day long."
+      },
+      "productos": [
+        {
+          "id": "copa-espumante",
+          "numero": null,
+          "nombre": {
+            "es": "Copa de espumante",
+            "en": "Glass of sparkling wine"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 8400,
+          "foto": "copa-flauta.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "gin-bombay",
+          "numero": null,
+          "nombre": {
+            "es": "Gin Bombay Saphire",
+            "en": "Bombay Sapphire Gin"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 11400,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "gin-beefeater",
+          "numero": null,
+          "nombre": {
+            "es": "Gin Beefeater",
+            "en": "Beefeater Gin"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 11400,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pisco-mistral-35",
+          "numero": null,
+          "nombre": {
+            "es": "Pisco Mistral 35° / Alto del Carmen 35°",
+            "en": "Mistral 35° / Alto del Carmen 35° Pisco"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 9900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "pisco-mistral-nobel",
+          "numero": null,
+          "nombre": {
+            "es": "Pisco Mistral Nobel",
+            "en": "Mistral Nobel Pisco"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 11900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "ron-havana",
+          "numero": null,
+          "nombre": {
+            "es": "Ron Havana Club Especial",
+            "en": "Havana Club Especial Rum"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10400,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "vodka-absolut",
+          "numero": null,
+          "nombre": {
+            "es": "Vodka Absolut",
+            "en": "Absolut Vodka"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "vodka-absolut-sabores",
+          "numero": null,
+          "nombre": {
+            "es": "Vodka Absolut Sabores",
+            "en": "Absolut Vodka Flavours"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 11900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "vodka-stolichnaya",
+          "numero": null,
+          "nombre": {
+            "es": "Vodka Stolichnaya",
+            "en": "Stolichnaya Vodka"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 9900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "whisky-ballantines",
+          "numero": null,
+          "nombre": {
+            "es": "Whisky Ballantines",
+            "en": "Ballantines Whisky"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "whisky-jack-daniels",
+          "numero": null,
+          "nombre": {
+            "es": "Whisky Jack Daniel's (Honey / Fire)",
+            "en": "Jack Daniel's Whisky (Honey / Fire)"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 12900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "baileys",
+          "numero": null,
+          "nombre": {
+            "es": "Baileys",
+            "en": "Baileys"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "fernet-branca",
+          "numero": null,
+          "nombre": {
+            "es": "Fernet Branca",
+            "en": "Fernet Branca"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "campari",
+          "numero": null,
+          "nombre": {
+            "es": "Campari",
+            "en": "Campari"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 10900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "jagermeister",
+          "numero": null,
+          "nombre": {
+            "es": "Jägermeister",
+            "en": "Jägermeister"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 11900,
+          "foto": "especial-botella.webp",
+          "etiquetas": [],
+          "disponible": true
+        },
+        {
+          "id": "tropical-gin",
+          "numero": null,
+          "nombre": {
+            "es": "Tropical Gin",
+            "en": "Tropical Gin"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 12900,
+          "foto": "copa-balon.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "pisco-bebida-redbull",
+          "numero": null,
+          "nombre": {
+            "es": "Pisco + bebida + Red Bull",
+            "en": "Pisco + soft drink + Red Bull"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 12900,
+          "foto": "especial-lata.webp",
+          "etiquetas": [
+            "destacado"
+          ],
+          "disponible": true
+        }
+      ]
+    },
+    {
+      "id": "sin-alcohol",
+      "nombre": {
+        "es": "Sin alcohol",
+        "en": "Non-alcoholic"
+      },
+      "nota": {
+        "es": "",
+        "en": ""
+      },
+      "productos": [
+        {
+          "id": "jugos-naturales",
+          "numero": null,
+          "nombre": {
+            "es": "Jugos naturales",
+            "en": "Fresh juices"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 4400,
+          "foto": "sin-jugo.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "limonada",
+          "numero": null,
+          "nombre": {
+            "es": "Limonada",
+            "en": "Lemonade"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 4900,
+          "foto": "sin-limonada.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "limonadas-sabores",
+          "numero": null,
+          "nombre": {
+            "es": "Limonadas",
+            "en": "Lemonades"
+          },
+          "desc": {
+            "es": "Menta, jengibre o clásica.",
+            "en": "Mint, ginger or classic."
+          },
+          "precio": 5200,
+          "foto": "sin-limonada-menta.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "limonada-sabor",
+          "numero": null,
+          "nombre": {
+            "es": "Limonada sabor",
+            "en": "Flavoured lemonade"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 5400,
+          "foto": "sin-limonada.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "bebidas",
+          "numero": null,
+          "nombre": {
+            "es": "Bebidas",
+            "en": "Soft drinks"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 2600,
+          "foto": "sin-bebida.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "redbull",
+          "numero": null,
+          "nombre": {
+            "es": "Red Bull",
+            "en": "Red Bull"
+          },
+          "desc": {
+            "es": "Regular, Sugarfree o Yellow.",
+            "en": "Regular, Sugarfree or Yellow."
+          },
+          "precio": 4200,
+          "foto": "especial-lata.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "cristal-cero",
+          "numero": null,
+          "nombre": {
+            "es": "Cristal Cero",
+            "en": "Cristal Zero"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 4200,
+          "foto": "sin-cerveza-cero.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "heineken-cero",
+          "numero": null,
+          "nombre": {
+            "es": "Heineken Cero",
+            "en": "Heineken Zero"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 4400,
+          "foto": "sin-cerveza-cero.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "cocktail-sin-alcohol",
+          "numero": null,
+          "nombre": {
+            "es": "Cocktail sin alcohol 2x1",
+            "en": "Non-alcoholic cocktail 2-for-1"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 7900,
+          "foto": "sin-cocktail.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        },
+        {
+          "id": "cocktail-sin-alcohol-sabores",
+          "numero": null,
+          "nombre": {
+            "es": "Cocktail sin alcohol sabores 2x1",
+            "en": "Flavoured non-alcoholic cocktail 2-for-1"
+          },
+          "desc": {
+            "es": "",
+            "en": ""
+          },
+          "precio": 8400,
+          "foto": "sin-cocktail.webp",
+          "etiquetas": [
+            "vegetariano"
+          ],
+          "disponible": true
+        }
+      ]
+    }
+  ]
+}
