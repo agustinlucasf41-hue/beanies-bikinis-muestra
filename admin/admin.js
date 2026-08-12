@@ -1,6 +1,8 @@
+import { activarOfertaProducto, crearProductoNuevo, marcarProductoAgotado, marcarProductoVisible, prepararCartaParaPublicar, quitarProductoNuevo } from './admin-state.mjs?v=20260812-admin-products-v3';
+
 const config = window.BEANIES_ADMIN_CONFIG || {};
 const API = String(config.apiBase || '').replace(/\/$/, '');
-const demo = location.hostname === 'localhost' && new URLSearchParams(location.search).get('demo') === '1';
+const demo = ['localhost', '127.0.0.1'].includes(location.hostname) && new URLSearchParams(location.search).get('demo') === '1';
 const CLAVE_SESION = 'bb.admin.session.v1';
 
 const estado = {
@@ -12,6 +14,7 @@ const estado = {
   busqueda: '',
   seleccionado: null,
   publicando: false,
+  nuevos: new Set(),
 };
 
 const dinero = (n) => `$${Number(n || 0).toLocaleString('es-CL')}`;
@@ -135,6 +138,7 @@ async function cargarDemo() {
   estado.carta = await respuesta.json();
   estado.sha = 'demostracion';
   estado.original = JSON.stringify(estado.carta);
+  estado.nuevos.clear();
   estado.seleccionado = estado.carta.categorias[0]?.productos[0]?.id || null;
   montarEditor();
   avisar('Demostración local: publicar está desactivado.', 'exito');
@@ -146,6 +150,7 @@ async function cargarCarta() {
     estado.carta = datos.menu;
     estado.sha = datos.sha;
     estado.original = JSON.stringify(datos.menu);
+    estado.nuevos.clear();
     estado.seleccionado = datos.menu.categorias[0]?.productos[0]?.id || null;
     montarEditor();
   } catch (error) {
@@ -258,6 +263,8 @@ function renderProductos() {
   }
   for (const { categoria, producto } of filas) {
     const li = document.createElement('li');
+    const esNuevo = estado.nuevos.has(producto.id);
+    li.className = `producto-item${esNuevo ? ' es-nuevo' : ''}`;
     const boton = crear('button', `fila-producto${producto.visible === false ? ' oculto' : ''}`);
     boton.type = 'button';
     boton.setAttribute('aria-current', String(estado.seleccionado === producto.id));
@@ -266,13 +273,20 @@ function renderProductos() {
     texto.append(crear('strong', '', producto.nombre.es || 'Sin nombre'), crear('small', '', categoria.nombre.es));
     const precio = crear('span', 'precio', dinero(producto.oferta?.activa && Number.isInteger(producto.oferta.precio) ? producto.oferta.precio : producto.precio));
     const estados = crear('span', 'estados');
-    const visibilidad = crear('span', `punto${producto.visible === false ? '' : ' visible'}`);
-    visibilidad.title = producto.visible === false ? 'Oculto' : 'Visible';
-    estados.append(visibilidad);
-    if (producto.oferta?.activa) { const oferta = crear('span', 'punto oferta'); oferta.title = 'Oferta activa'; estados.append(oferta); }
+    estados.append(crear('span', `estado-lista ${producto.visible === false ? 'estado-oculto' : 'estado-visible'}`, producto.visible === false ? 'Oculto' : 'Visible'));
+    if (producto.disponible === false) estados.append(crear('span', 'estado-lista estado-agotado', 'Agotado'));
+    if (producto.oferta?.activa) estados.append(crear('span', 'estado-lista estado-oferta', 'Oferta'));
+    if (esNuevo) estados.append(crear('span', 'estado-borrador', 'Nuevo'));
     boton.append(texto, precio, estados);
     boton.addEventListener('click', () => { estado.seleccionado = producto.id; renderProductos(); renderInspector(); });
     li.append(boton);
+    if (esNuevo) {
+      const quitar = crear('button', 'quitar-borrador', 'Quitar');
+      quitar.type = 'button';
+      quitar.setAttribute('aria-label', `Quitar ${producto.nombre.es || 'producto nuevo'} del borrador`);
+      quitar.addEventListener('click', () => quitarBorrador(producto.id));
+      li.append(quitar);
+    }
     lista.append(li);
   }
 }
@@ -285,6 +299,7 @@ function renderInspector() {
     return;
   }
   const { categoria, producto } = encontrado;
+  const esNuevo = estado.nuevos.has(producto.id);
   const oferta = producto.oferta || { activa: false, precio: null, texto: { es: '', en: '' } };
   inspector.innerHTML = `
     <header class="inspector-cabecera"><h2 id="editor-titulo"></h2><p id="editor-meta"></p></header>
@@ -299,21 +314,40 @@ function renderInspector() {
       </div>
       <div class="grupo-editor">
         <h3>Estado público</h3>
-        <label class="interruptor"><span>Visible en la web</span><input name="visible" type="checkbox"></label>
-        <label class="interruptor"><span>Disponible para pedir</span><input name="disponible" type="checkbox"></label>
+        <label class="interruptor">
+          <span><b>Visible en carta</b><small>Al apagarlo, desaparece de la carta pública sin borrarse.</small></span>
+          <input name="visible" type="checkbox" role="switch">
+        </label>
+        <label class="interruptor">
+          <span><b>Producto agotado</b><small>Sigue en la carta, marcado como no disponible.</small></span>
+          <input name="agotado" type="checkbox" role="switch">
+        </label>
       </div>
       <div class="grupo-editor">
         <h3>Oferta</h3>
-        <label class="interruptor"><span>Oferta activa</span><input name="oferta.activa" type="checkbox"></label>
-        <label>Precio de oferta (opcional)<input name="oferta.precio" type="number" min="0" max="100000000" step="100" placeholder="Ej. 9900"></label>
-        <label>Texto de oferta en español<input name="oferta.texto.es" maxlength="60" placeholder="Ej. 2x1 toda la noche"></label>
-        <label>Texto de oferta en inglés<input name="oferta.texto.en" maxlength="60" placeholder="Ej. 2-for-1 all night"></label>
+        <label class="interruptor">
+          <span><b>Producto en oferta</b><small>Destaca el producto y conserva el precio base.</small></span>
+          <input name="oferta.activa" type="checkbox" role="switch" aria-controls="oferta-campos" aria-expanded="false">
+        </label>
+        <div class="oferta-campos" id="oferta-campos" hidden>
+          <label>Precio promocional (opcional)<input name="oferta.precio" type="number" min="0" max="100000000" step="100" placeholder="Ej. 9900"></label>
+          <label>Texto de oferta en español<input name="oferta.texto.es" maxlength="60" placeholder="Ej. 2x1 toda la noche"></label>
+          <label>Texto de oferta en inglés<input name="oferta.texto.en" maxlength="60" placeholder="Ej. 2-for-1 all night"></label>
+        </div>
       </div>
     </form>
-    <footer class="inspector-pie"><p>Los cambios permanecen en borrador hasta usar “Publicar carta”. Para retirar un producto sin borrarlo, desactiva “Visible en la web”.</p></footer>`;
+    <footer class="inspector-pie">
+      ${esNuevo ? `
+        <div class="inspector-accion">
+          <strong>Producto nuevo sin publicar</strong>
+          <button class="boton boton-peligro" id="quitar-borrador" type="button">Quitar del borrador</button>
+        </div>
+        <p>Quitar elimina este producto nuevo del borrador. No afecta la carta que ven los clientes.</p>
+      ` : '<p>Este producto ya está publicado. Para retirarlo sin borrarlo, apaga “Visible en carta” o activa “Producto agotado”.</p>'}
+    </footer>`;
 
   inspector.querySelector('#editor-titulo').textContent = producto.nombre.es || 'Producto sin nombre';
-  inspector.querySelector('#editor-meta').textContent = `ID: ${producto.id}`;
+  inspector.querySelector('#editor-meta').textContent = `${esNuevo ? 'Nuevo sin publicar · ' : ''}ID: ${producto.id}`;
   const form = inspector.querySelector('#editor-form');
   const categoriaSelect = form.elements.categoria;
   for (const cat of estado.carta.categorias) {
@@ -326,13 +360,15 @@ function renderInspector() {
   form.elements['desc.en'].value = producto.desc?.en || '';
   form.elements.precio.value = producto.precio;
   form.elements.visible.checked = producto.visible !== false;
-  form.elements.disponible.checked = producto.disponible !== false;
+  form.elements.agotado.checked = producto.disponible === false;
   form.elements['oferta.activa'].checked = Boolean(oferta.activa);
   form.elements['oferta.precio'].value = Number.isInteger(oferta.precio) ? oferta.precio : '';
   form.elements['oferta.texto.es'].value = oferta.texto?.es || '';
   form.elements['oferta.texto.en'].value = oferta.texto?.en || '';
+  actualizarCamposOferta(form, Boolean(oferta.activa));
   form.addEventListener('input', aplicarEditor);
   categoriaSelect.addEventListener('change', cambiarCategoria);
+  inspector.querySelector('#quitar-borrador')?.addEventListener('click', () => quitarBorrador(producto.id));
 }
 
 function aplicarEditor(evento) {
@@ -342,10 +378,20 @@ function aplicarEditor(evento) {
   const { name, type, checked, value } = evento.target;
   if (name === 'categoria') return;
   if (name === 'precio') p.precio = value === '' ? null : Number(value);
-  else if (name === 'visible' || name === 'disponible') p[name] = checked;
+  else if (name === 'visible') {
+    marcarProductoVisible(p, checked);
+    avisar(checked ? 'Producto visible en la carta pública.' : 'Producto oculto de la carta pública.', 'exito');
+  }
+  else if (name === 'agotado') {
+    marcarProductoAgotado(p, checked);
+    avisar(checked ? 'Producto marcado como agotado.' : 'Producto marcado como disponible.', 'exito');
+  }
   else if (name.startsWith('oferta.')) {
-    p.oferta ||= { activa: false, precio: null, texto: { es: '', en: '' } };
-    if (name === 'oferta.activa') p.oferta.activa = checked;
+    if (name === 'oferta.activa') {
+      activarOfertaProducto(p, checked);
+      actualizarCamposOferta(evento.currentTarget, checked);
+      avisar(checked ? 'Oferta activada; completa el precio o texto promocional.' : 'Oferta desactivada; el precio base se conserva.', 'exito');
+    }
     else if (name === 'oferta.precio') p.oferta.precio = value === '' ? null : Number(value);
     else p.oferta.texto[name.endsWith('.es') ? 'es' : 'en'] = value;
   } else {
@@ -356,6 +402,15 @@ function aplicarEditor(evento) {
   inspectorTitulo(p);
   renderProductos();
   actualizarPublicacion();
+}
+
+function actualizarCamposOferta(form, activa) {
+  const campos = form.querySelector('#oferta-campos');
+  const switchOferta = form.elements['oferta.activa'];
+  if (!campos || !switchOferta) return;
+  campos.hidden = !activa;
+  switchOferta.setAttribute('aria-expanded', String(activa));
+  for (const campo of campos.querySelectorAll('input')) campo.disabled = !activa;
 }
 
 function inspectorTitulo(producto) {
@@ -379,18 +434,8 @@ function agregarProducto() {
   const categoria = estado.carta.categorias.find((c) => c.id === estado.categoria) || estado.carta.categorias[0];
   if (!categoria) return;
   const id = `producto-${Date.now().toString(36)}`;
-  const producto = {
-    id,
-    numero: null,
-    nombre: { es: 'Nuevo producto', en: '' },
-    desc: { es: '', en: '' },
-    precio: 0,
-    foto: '',
-    etiquetas: [],
-    visible: false,
-    disponible: true,
-  };
-  categoria.productos.push(producto);
+  const { producto } = crearProductoNuevo(estado.carta, categoria.id, id);
+  estado.nuevos.add(id);
   estado.categoria = categoria.id;
   estado.busqueda = '';
   estado.seleccionado = id;
@@ -398,6 +443,29 @@ function agregarProducto() {
   renderTodo();
   document.querySelector('[name="nombre.es"]')?.select();
   avisar('Producto creado oculto. Complétalo antes de hacerlo visible.', 'exito');
+}
+
+function quitarBorrador(productoId) {
+  if (!estado.nuevos.has(productoId)) return;
+  const encontrado = productosPlanos().find(({ producto }) => producto.id === productoId);
+  if (!encontrado) return;
+  const producto = encontrado.producto;
+  const tieneEdicion = producto.nombre.es !== 'Nuevo producto'
+    || producto.nombre.en
+    || producto.desc?.es
+    || producto.desc?.en
+    || producto.precio !== 0
+    || producto.visible !== false
+    || producto.disponible !== true
+    || producto.oferta?.activa;
+  if (tieneEdicion && !window.confirm(`¿Quitar “${producto.nombre.es || 'producto nuevo'}” del borrador? Sus datos sin publicar se descartarán.`)) return;
+
+  const resultado = quitarProductoNuevo(estado.carta, estado.nuevos, productoId);
+  if (!resultado.quitado) return;
+  if (estado.seleccionado === productoId) estado.seleccionado = resultado.siguienteId;
+  renderTodo();
+  avisar('Producto nuevo quitado del borrador. No se publicará.', 'exito');
+  requestAnimationFrame(() => document.getElementById('agregar')?.focus());
 }
 
 function validarCarta() {
@@ -423,10 +491,12 @@ async function publicar() {
   try {
     const resultado = await api('/api/menu', {
       method: 'PUT',
-      body: JSON.stringify({ menu: estado.carta, sha: estado.sha }),
+      body: JSON.stringify({ menu: prepararCartaParaPublicar(estado.carta), sha: estado.sha }),
     });
     estado.sha = resultado.sha;
     estado.original = JSON.stringify(estado.carta);
+    estado.nuevos.clear();
+    renderTodo();
     avisar('Carta publicada. GitHub Pages aplicará el cambio en unos minutos.', 'exito');
   } catch (error) {
     if (error.status === 409) avisar('La carta cambió en otra sesión. Recarga antes de volver a publicar.', 'error');
@@ -451,6 +521,7 @@ function cerrarSesion(mensaje = '') {
 
 async function iniciar() {
   document.getElementById('cargando')?.remove();
+  if (demo) { await cargarDemo(); return; }
   if (!API) { mostrarSinConfig(); return; }
   if (estado.token) { await cargarCarta(); return; }
   mostrarAcceso();

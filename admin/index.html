@@ -31,12 +31,12 @@
 
       const css = document.createElement('link');
       css.rel = 'stylesheet';
-      css.href = 'admin.css?v=20260812-admin-v1';
+      css.href = 'admin.css?v=20260812-admin-products-v3';
       document.head.append(css);
 
       const config = document.createElement('script');
-      config.src = 'config.js?v=20260812-admin-v1';
-      config.onload = () => import('./admin.js?v=20260812-admin-v1');
+      config.src = 'config.js?v=20260812-admin-live';
+      config.onload = () => import('./admin.js?v=20260812-admin-products-v3');
       config.onerror = () => {
         document.getElementById('cargando').innerHTML = '<h1>No pudimos cargar la configuración</h1><p>Recarga la página. Si continúa, revisa la guía de activación.</p>';
       };

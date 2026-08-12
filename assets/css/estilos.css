@@ -831,6 +831,7 @@ a, button, input { -webkit-tap-highlight-color: transparent; }
 
 .producto.agotado .producto-dibujo { opacity: .36; }
 .producto.agotado .producto-precio { color: var(--bb-text-muted); text-decoration: line-through; }
+.producto.en-oferta { background: rgb(245 181 16 / 5%); box-shadow: inset 0 1px rgb(245 181 16 / 22%), inset 0 -1px rgb(245 181 16 / 22%); }
 
 .sin-resultados {
   margin-top: var(--bb-space-5);

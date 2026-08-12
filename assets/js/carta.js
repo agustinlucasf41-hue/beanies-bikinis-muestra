@@ -24,6 +24,7 @@
   function pintarProducto(producto) {
     const li = elemento('li', 'producto');
     if (!producto.disponible) li.classList.add('agotado');
+    if (producto.oferta?.activa) li.classList.add('en-oferta');
 
     // Dibujo, o la inicial del nombre mientras no lo haya.
     const caja = elemento('div', 'producto-dibujo');
