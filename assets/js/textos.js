@@ -48,6 +48,7 @@ window.TEXTOS = {
     'sello.vegetariano': 'Veg',
     'sello.picante': 'Picante',
     'sello.nuevo': 'Nuevo',
+    'sello.oferta': 'Oferta',
     'sello.agotado': 'Hoy no',
 
     'cesta.vaciar': 'Vaciar',
@@ -122,6 +123,7 @@ window.TEXTOS = {
     'sello.vegetariano': 'Veg',
     'sello.picante': 'Spicy',
     'sello.nuevo': 'New',
+    'sello.oferta': 'Offer',
     'sello.agotado': 'Not today',
 
     'cesta.vaciar': 'Clear',

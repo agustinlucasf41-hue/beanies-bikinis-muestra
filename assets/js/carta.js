@@ -53,6 +53,12 @@
       if (!SELLOS.includes(etiqueta)) continue;
       nombre.append(elemento('span', `sello sello-${etiqueta}`, window.t(`sello.${etiqueta}`, estado.idioma)));
     }
+    if (producto.oferta?.activa) {
+      const textoOferta = producto.oferta.texto?.[estado.idioma]
+        || producto.oferta.texto?.es
+        || window.t('sello.oferta', estado.idioma);
+      nombre.append(elemento('span', 'sello sello-oferta', textoOferta));
+    }
     if (!producto.disponible) {
       nombre.append(elemento('span', 'sello sello-agotado', window.t('sello.agotado', estado.idioma)));
     }
@@ -63,7 +69,17 @@
     li.append(cuerpo);
 
     const derecha = elemento('div', 'producto-derecha');
-    derecha.append(elemento('span', 'producto-precio', dinero(producto.precio)));
+    const precioOferta = producto.oferta?.activa && Number.isInteger(producto.oferta.precio)
+      ? producto.oferta.precio
+      : null;
+    if (precioOferta !== null) {
+      const precios = elemento('span', 'producto-precios');
+      precios.append(elemento('span', 'producto-precio producto-precio-anterior', dinero(producto.precio)));
+      precios.append(elemento('span', 'producto-precio producto-precio-oferta', dinero(precioOferta)));
+      derecha.append(precios);
+    } else {
+      derecha.append(elemento('span', 'producto-precio', dinero(producto.precio)));
+    }
 
     if (window.Carta.cestaActiva && producto.disponible) {
       const boton = elemento('button', 'anadir', '+');
@@ -172,7 +188,8 @@
       for (const cat of carta.categorias) {
         if (estado.categoria !== 'todo' && estado.categoria !== cat.id) continue;
         const productos = cat.productos.filter(
-          (p) => !estado.soloVeg || (p.etiquetas || []).includes('vegetariano')
+          (p) => p.visible !== false
+            && (!estado.soloVeg || (p.etiquetas || []).includes('vegetariano'))
         );
         if (!productos.length) continue;
         total += productos.length;

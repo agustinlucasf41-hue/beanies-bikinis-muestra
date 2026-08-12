@@ -345,7 +345,7 @@
   /* ---------- Arranque ---------- */
 
   async function cargarJSON(ruta) {
-    const respuesta = await fetch(ruta);
+    const respuesta = await fetch(ruta, { cache: 'no-store' });
     if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
     return respuesta.json();
   }

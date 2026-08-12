@@ -770,6 +770,21 @@ a, button, input { -webkit-tap-highlight-color: transparent; }
   white-space: nowrap;
 }
 
+.producto-precios {
+  display: grid;
+  justify-items: end;
+  gap: .2rem;
+}
+
+.producto-precio-anterior {
+  color: var(--bb-text-muted);
+  font-size: .78rem;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.producto-precio-oferta { color: var(--bb-gold-500); }
+
 .anadir {
   width: 2.75rem; height: 2.75rem;
   padding: 0;
@@ -811,6 +826,7 @@ a, button, input { -webkit-tap-highlight-color: transparent; }
 .sello-vegetariano { color: var(--bb-bone-100); border-color: var(--bb-mural-green-600); }
 .sello-picante { color: var(--bb-bone-100); border-color: var(--bb-danger); }
 .sello-nuevo { color: var(--bb-hibiscus-500); }
+.sello-oferta { color: var(--bb-gold-500); border-color: var(--bb-gold-500); }
 .sello-agotado { color: var(--bb-text-muted); }
 
 .producto.agotado .producto-dibujo { opacity: .36; }

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0907">
+  <title>Administración de carta · Beanies &amp; Bikinis</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:2rem;background:#0b0907;color:#ede3d2;font:16px/1.5 system-ui,sans-serif}.inicio{width:min(36rem,100%);border-top:2px solid #f5b510;padding-top:2rem}.inicio h1{margin:0 0 .75rem;font-size:clamp(2rem,6vw,3.5rem);line-height:.95}.inicio p{color:#bfb3a1}.inicio a{color:#f5b510}.pulso{width:1rem;height:1rem;margin-top:1.5rem;border-radius:50%;background:#f5b510;animation:pulso 1.2s ease-in-out infinite}@keyframes pulso{50%{opacity:.25;transform:scale(.7)}}@media(prefers-reduced-motion:reduce){.pulso{animation:none}}@media(min-width:1024px) and (pointer:fine){#solo-movil{display:none}}@media(max-width:1023px),(pointer:coarse){#cargando{display:none}}
+  </style>
+</head>
+<body>
+  <main class="inicio" id="cargando" aria-live="polite">
+    <p>Beanies &amp; Bikinis</p>
+    <h1>Abriendo administración de carta</h1>
+    <p>Preparando el editor seguro de escritorio.</p>
+    <div class="pulso" aria-hidden="true"></div>
+  </main>
+  <main class="inicio" id="solo-movil">
+    <p>Beanies &amp; Bikinis</p>
+    <h1>Administración solo en escritorio</h1>
+    <p>Por seguridad y para evitar errores al editar precios, este panel está disponible únicamente desde un computador con teclado y puntero.</p>
+    <p><a href="../">Volver a la carta pública</a></p>
+  </main>
+  <noscript><p>Activa JavaScript para usar la administración.</p></noscript>
+  <script>
+    (() => {
+      const escritorio = window.matchMedia('(min-width: 1024px) and (pointer: fine)');
+      if (!escritorio.matches) return;
+
+      const css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'admin.css?v=20260812-admin-v1';
+      document.head.append(css);
+
+      const config = document.createElement('script');
+      config.src = 'config.js?v=20260812-admin-v1';
+      config.onload = () => import('./admin.js?v=20260812-admin-v1');
+      config.onerror = () => {
+        document.getElementById('cargando').innerHTML = '<h1>No pudimos cargar la configuración</h1><p>Recarga la página. Si continúa, revisa la guía de activación.</p>';
+      };
+      document.head.append(config);
+    })();
+  </script>
+</body>
+</html>
