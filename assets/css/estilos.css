@@ -575,8 +575,6 @@ a, button, input { -webkit-tap-highlight-color: transparent; }
   backdrop-filter: blur(14px);
 }
 
-.carril-filtros { position: relative; }
-
 .filtros {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
@@ -584,8 +582,6 @@ a, button, input { -webkit-tap-highlight-color: transparent; }
   gap: .5rem;
   padding: 2px;
 }
-
-.filtro-desplazar { display: none; }
 
 .pestana {
   position: relative;
@@ -603,7 +599,6 @@ a, button, input { -webkit-tap-highlight-color: transparent; }
   text-transform: uppercase;
   line-height: 1.05;
   text-wrap: balance;
-  scroll-snap-align: start;
   cursor: pointer;
   transition: color var(--bb-duration-fast) var(--bb-ease-standard),
               border-color var(--bb-duration-fast) var(--bb-ease-standard),
@@ -1199,120 +1194,30 @@ a, button, input { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 900px) {
   .nav-enlaces { display: none; }
   .abrir-menu, .cerrar-menu { display: inline-flex; }
-
-  .carril-filtros::before,
-  .carril-filtros::after {
-    content: "";
-    position: absolute;
+  .controles {
+    position: relative;
+    top: auto;
     z-index: 1;
-    inset-block: 0;
-    width: 4.25rem;
-    pointer-events: none;
-    transition: opacity var(--bb-duration-fast) var(--bb-ease-standard);
   }
-
-  .carril-filtros::before {
-    left: 0;
-    background: linear-gradient(90deg, rgb(11 9 7 / 100%) 38%, rgb(11 9 7 / 0%));
-    opacity: 0;
-  }
-
-  .carril-filtros::after {
-    right: 0;
-    background: linear-gradient(270deg, rgb(11 9 7 / 100%) 38%, rgb(11 9 7 / 0%));
-    opacity: 0;
-  }
-
-  .carril-filtros[data-hay-izquierda="true"]::before,
-  .carril-filtros[data-hay-derecha="true"]::after { opacity: 1; }
-
   .filtros {
-    display: flex;
-    align-items: stretch;
-    gap: .5rem;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    padding-inline: 3.5rem;
-    scroll-padding-inline: 3.5rem;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .45rem;
+    overflow: visible;
+    padding: 2px;
   }
-
-  .filtros::-webkit-scrollbar { display: none; }
-
   .pestana {
-    flex: none;
-    width: auto;
-    min-height: 2.75rem;
-    padding-inline: var(--bb-space-2);
-    white-space: nowrap;
-  }
-
-  .filtro-desplazar {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    display: grid;
-    place-items: center;
-    width: 2.75rem;
-    height: 2.75rem;
-    padding: 0;
-    background: var(--bb-action);
-    color: var(--bb-action-text);
-    border: 1px solid var(--bb-action);
-    border-radius: var(--bb-radius-sm);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transform: translateY(-50%);
-    transition: opacity var(--bb-duration-fast) var(--bb-ease-standard),
-                background-color var(--bb-duration-fast) var(--bb-ease-standard);
-  }
-
-  .filtro-anterior { left: .15rem; }
-  .filtro-siguiente { right: .15rem; }
-
-  .filtro-desplazar:disabled {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  /* En pantallas compactas las flechas ocupan su propia columna: ninguna
-     etiqueta pasa por debajo de ellas ni queda visualmente cortada. */
-  .carril-filtros {
-    display: grid;
-    grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
-    align-items: center;
-    gap: .5rem;
-  }
-
-  .carril-filtros::before,
-  .carril-filtros::after { display: none; }
-
-  .filtros {
-    grid-column: 2;
-    padding-inline: 0;
-    scroll-padding-inline: 0;
-  }
-
-  .pestana {
-    flex-basis: calc((100% - .5rem) / 2);
+    width: 100%;
+    min-height: 3.25rem;
+    padding: .55rem .4rem;
+    font-size: .72rem;
+    line-height: 1.08;
     white-space: normal;
     text-wrap: balance;
   }
-
-  .filtro-desplazar {
-    position: static;
-    align-self: center;
-    transform: none;
-  }
-
-  .filtro-anterior { grid-column: 1; }
-  .filtro-siguiente { grid-column: 3; }
 }
 
 @media (max-width: 360px) {
-  .pestana { flex-basis: 100%; }
+  .filtros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 860px) {

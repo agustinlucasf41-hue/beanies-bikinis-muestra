@@ -8,7 +8,6 @@
   let carta = null;
   let alAnadir = () => {};
   let temporizadorFiltro;
-  let actualizarCarril = () => {};
 
   const estado = { idioma: 'es', categoria: 'todo', soloVeg: false };
   const reduceMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -139,9 +138,6 @@
         resultados.classList.remove('cambiando');
         const botonActivo = document.querySelector(`[data-filtro="${CSS.escape(filtroElegido)}"]`);
         botonActivo?.focus({ preventScroll: true });
-        if (window.matchMedia('(max-width: 900px)').matches) {
-          botonActivo?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduceMovimiento.matches ? 'auto' : 'smooth' });
-        }
       };
 
       if (reduceMovimiento.matches) {
@@ -154,49 +150,6 @@
     });
   }
 
-  function configurarCarril(contenedor) {
-    const carril = contenedor.closest('.carril-filtros');
-    const anterior = carril?.querySelector('.filtro-anterior');
-    const siguiente = carril?.querySelector('.filtro-siguiente');
-    if (!carril || !anterior || !siguiente) return;
-
-    actualizarCarril = () => {
-      const maximo = Math.max(0, contenedor.scrollWidth - contenedor.clientWidth);
-      const hayIzquierda = contenedor.scrollLeft > 4;
-      const hayDerecha = contenedor.scrollLeft < maximo - 4;
-      carril.dataset.hayIzquierda = String(hayIzquierda);
-      carril.dataset.hayDerecha = String(hayDerecha);
-      anterior.disabled = !hayIzquierda;
-      siguiente.disabled = !hayDerecha;
-    };
-
-    const mover = (direccion) => {
-      contenedor.scrollBy({
-        left: direccion * Math.max(220, contenedor.clientWidth * .72),
-        behavior: reduceMovimiento.matches ? 'auto' : 'smooth',
-      });
-    };
-
-    anterior.addEventListener('click', () => mover(-1));
-    siguiente.addEventListener('click', () => mover(1));
-    contenedor.addEventListener('scroll', actualizarCarril, { passive: true });
-    contenedor.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-      const botones = [...contenedor.querySelectorAll('.pestana')];
-      const actual = botones.indexOf(document.activeElement);
-      if (actual < 0) return;
-      const direccion = e.key === 'ArrowRight' ? 1 : -1;
-      const destino = botones[Math.min(botones.length - 1, Math.max(0, actual + direccion))];
-      if (destino === document.activeElement) return;
-      e.preventDefault();
-      destino.focus({ preventScroll: true });
-      destino.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduceMovimiento.matches ? 'auto' : 'smooth' });
-    });
-
-    new ResizeObserver(actualizarCarril).observe(contenedor);
-    requestAnimationFrame(actualizarCarril);
-  }
-
   const Carta = {
     cestaActiva: false,
 
@@ -205,14 +158,12 @@
       alAnadir = opciones.alAnadir || alAnadir;
       Carta.cestaActiva = Boolean(opciones.cestaActiva);
       escucharFiltros(document.getElementById('filtros'));
-      configurarCarril(document.getElementById('filtros'));
     },
 
     estado,
 
     render() {
       pintarFiltros(document.getElementById('filtros'));
-      requestAnimationFrame(actualizarCarril);
 
       const destino = document.getElementById('resultados');
       const trozos = [];
