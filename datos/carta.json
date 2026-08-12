@@ -132,7 +132,7 @@
           "etiquetas": [
             "vegetariano"
           ],
-          "disponible": false,
+          "disponible": true,
           "visible": true
         },
         {
@@ -167,7 +167,7 @@
           "precio": 15400,
           "foto": "comida-chorrillana.webp",
           "etiquetas": [],
-          "disponible": false
+          "disponible": true
         },
         {
           "id": "chorrillana-vegetariana",
@@ -232,7 +232,7 @@
           "etiquetas": [
             "vegetariano"
           ],
-          "disponible": false
+          "disponible": true
         },
         {
           "id": "pizza-calabresa",
@@ -284,7 +284,7 @@
           ],
           "disponible": true,
           "oferta": {
-            "activa": true,
+            "activa": false,
             "precio": 5000,
             "texto": {
               "es": "",
