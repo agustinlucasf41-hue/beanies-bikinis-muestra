@@ -1,6 +1,6 @@
 {
   "moneda": "$",
-  "actualizado": "2026-08-10",
+  "actualizado": "2026-08-12",
   "fuente": "Carta oficial en PDF, 8 páginas, enlazada desde la bio de Instagram",
   "categorias": [
     {
@@ -132,7 +132,8 @@
           "etiquetas": [
             "vegetariano"
           ],
-          "disponible": true
+          "disponible": false,
+          "visible": true
         },
         {
           "id": "papas-fritas",
@@ -166,7 +167,7 @@
           "precio": 15400,
           "foto": "comida-chorrillana.webp",
           "etiquetas": [],
-          "disponible": true
+          "disponible": false
         },
         {
           "id": "chorrillana-vegetariana",
@@ -231,7 +232,7 @@
           "etiquetas": [
             "vegetariano"
           ],
-          "disponible": true
+          "disponible": false
         },
         {
           "id": "pizza-calabresa",
@@ -281,7 +282,15 @@
           "etiquetas": [
             "vegetariano"
           ],
-          "disponible": true
+          "disponible": true,
+          "oferta": {
+            "activa": true,
+            "precio": 5000,
+            "texto": {
+              "es": "",
+              "en": ""
+            }
+          }
         },
         {
           "id": "pizza-rockera",
