@@ -1081,6 +1081,7 @@ a, button, input { -webkit-tap-highlight-color: transparent; }
 /* Pie */
 
 .pie {
+  position: relative;
   padding-block: var(--bb-space-5) var(--bb-space-6);
   background: var(--bb-bg-deep);
   border-top: var(--bb-borde);
@@ -1141,6 +1142,44 @@ a, button, input { -webkit-tap-highlight-color: transparent; }
   color: var(--bb-text-muted);
   font-size: .82rem;
   text-align: right;
+}
+
+.pie-admin {
+  position: absolute;
+  right: max(.65rem, env(safe-area-inset-right));
+  bottom: max(.45rem, env(safe-area-inset-bottom));
+  display: inline-grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  color: var(--bb-text-muted);
+  opacity: .24;
+  border-radius: var(--bb-radius-sm);
+  text-decoration: none;
+  transition: color var(--bb-duration-fast) var(--bb-ease-standard),
+              opacity var(--bb-duration-fast) var(--bb-ease-standard),
+              background-color var(--bb-duration-fast) var(--bb-ease-standard);
+}
+
+.pie-admin svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pie-admin:hover {
+  color: var(--bb-text);
+  opacity: .7;
+  background: rgb(237 227 210 / 5%);
+}
+
+.pie-admin:focus-visible {
+  color: var(--bb-action);
+  opacity: 1;
+  outline: 3px solid var(--bb-action);
+  outline-offset: 2px;
 }
 
 /* Lista inferior */
