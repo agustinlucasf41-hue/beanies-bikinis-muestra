@@ -10,21 +10,24 @@
 <meta property="og:type" content="restaurant">
 <meta property="og:title" content="Beanies &amp; Bikinis · Restaurant Bar en Pucón">
 <meta property="og:description" content="Carta completa, cócteles de autor y 2x1 en tragos todos los días. Fresia 477, Pucón.">
-<meta property="og:image" content="assets/img/logo-provisional.png">
+<meta property="og:image" content="assets/img/mural-artistas.webp">
 <meta property="og:locale" content="es_CL">
-<meta name="theme-color" content="#17120e">
+<meta name="theme-color" content="#0b0907">
 
 <link rel="preload" href="assets/fuentes/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fuentes/barlow-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/estilos.css">
+<link rel="preload" href="assets/img/mural-artistas.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/estilos.css?v=20260812-brand-hero-final">
 </head>
 <body>
 
-<a class="oculto-visual" href="#carta">Saltar a la carta</a>
+<a class="saltar-enlace" href="#carta" data-t="nav.saltarCarta">Saltar a la carta</a>
 
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" aria-label="Navegación principal">
   <div class="contenedor">
-    <a class="nav-marca" href="#inicio">Beanies <span class="copo">&amp;</span> Bikinis</a>
+    <a class="nav-marca" href="#inicio" aria-label="Beanies &amp; Bikinis, inicio">
+      <img src="assets/img/logo-beanies-bikinis.png?v=20260812-redesign-final" width="1018" height="392" alt="">
+    </a>
 
     <div class="nav-derecha">
       <div class="nav-enlaces">
@@ -42,7 +45,7 @@
       <a class="boton boton-primario" href="#carta" data-t="nav.verCarta">Ver la carta</a>
 
       <button type="button" class="abrir-menu" id="abrir-menu" aria-expanded="false" aria-controls="menu-movil">
-        <span></span>
+        <span aria-hidden="true"></span>
         <span class="oculto-visual" data-t="nav.abrirMenu">Abrir el menú</span>
       </button>
     </div>
@@ -51,35 +54,44 @@
 
 <div class="menu-movil" id="menu-movil" data-abierto="false" role="dialog" aria-modal="true" aria-label="Menú">
   <div class="menu-movil-cabecera">
-    <span class="nav-marca">Beanies <span class="copo">&amp;</span> Bikinis</span>
+    <span class="nav-marca" aria-hidden="true">
+      <img src="assets/img/logo-beanies-bikinis.png?v=20260812-redesign-final" width="1018" height="392" alt="">
+    </span>
     <button type="button" class="cerrar-menu" id="cerrar-menu">
-      &times;<span class="oculto-visual" data-t="nav.cerrarMenu">Cerrar el menú</span>
+      <span aria-hidden="true">×</span><span class="oculto-visual" data-t="nav.cerrarMenu">Cerrar el menú</span>
     </button>
   </div>
-  <nav>
+  <nav aria-label="Navegación móvil">
     <a href="#inicio" data-t="nav.inicio">Inicio</a>
     <a href="#carta" data-t="nav.carta">Carta</a>
     <a href="#bar" data-t="nav.bar">El bar</a>
     <a href="#visita" data-t="nav.visita">Cómo llegar</a>
   </nav>
+  <div class="idioma idioma-movil" role="group" aria-label="Idioma">
+    <button type="button" data-idioma="es" aria-pressed="true">ES</button>
+    <button type="button" data-idioma="en" aria-pressed="false">EN</button>
+  </div>
   <a class="boton boton-primario" href="#carta" data-t="nav.verCarta">Ver la carta</a>
 </div>
 
 <header class="portada" id="inicio">
+  <div class="portada-mural" aria-hidden="true">
+    <img src="assets/img/mural-artistas.webp?v=20260812-redesign-final" width="1536" height="1024" alt="" fetchpriority="high">
+  </div>
+  <div class="portada-grano" aria-hidden="true"></div>
   <div class="contenedor">
-    <!-- Provisional: captura del rótulo. Pendiente el máster oficial del logo. -->
-    <img class="marca-grande" src="assets/img/logo-provisional.png"
-         width="1075" height="433" alt="Beanies &amp; Bikinis · Restaurant Bar" fetchpriority="high">
+    <img class="marca-grande" src="assets/img/logo-beanies-bikinis.png?v=20260812-brand-hero-final"
+         width="1018" height="392" alt="Beanies &amp; Bikinis · Restaurant Bar" fetchpriority="high">
 
     <h1 class="lema" data-t="portada.lema">Refugio de montaña, <em>mural tropical</em></h1>
 
     <p class="entradilla" data-t="portada.entradilla">
-      Gorros de lana y bikinis. El volcán y el lago. Los partidos en pantalla grande,
+      Beanies &amp; Bikinis entre el volcán y el lago. Los partidos en pantalla grande,
       reggae en la barra y la cocina abierta hasta tarde.
     </p>
 
     <p class="estado" id="estado" hidden>
-      <span class="punto"></span><span class="estado-texto"></span>
+      <span class="punto" aria-hidden="true"></span><span class="estado-texto"></span>
     </p>
 
     <div class="acciones">
@@ -92,19 +104,50 @@
 
 <div class="promo" id="promo" hidden>
   <div class="contenedor">
-    <span class="cifra">2x1</span>
+    <span class="cifra" aria-hidden="true">2×1</span>
     <span class="texto" id="promo-texto"></span>
   </div>
 </div>
 
 <main>
 
-<section class="seccion" id="especialidades">
+<section class="seccion seccion-carta" id="carta">
+  <div class="contenedor">
+    <div class="carta-intro">
+      <h2 class="titulo-seccion" data-t="carta.titulo">La <span class="acento">carta</span></h2>
+      <p class="entradilla" data-t="carta.entradilla">
+        Todo lo que sale de la cocina y de la barra, organizado por categorías para elegir sin vueltas.
+      </p>
+    </div>
+
+    <div class="controles">
+      <div class="carril-filtros" data-hay-izquierda="false" data-hay-derecha="false">
+        <button type="button" class="filtro-desplazar filtro-anterior" disabled
+                aria-controls="filtros" aria-label="Ver categorías anteriores"
+                data-t-attr="aria-label:carta.categoriasAnteriores">
+          <span aria-hidden="true">←</span>
+        </button>
+        <div class="filtros" id="filtros" role="group" aria-label="Categorías"
+             data-t-attr="aria-label:carta.categorias" tabindex="-1"></div>
+        <button type="button" class="filtro-desplazar filtro-siguiente" disabled
+                aria-controls="filtros" aria-label="Ver más categorías"
+                data-t-attr="aria-label:carta.categoriasSiguientes">
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+
+    <p id="resultados-estado" class="oculto-visual" aria-live="polite" aria-atomic="true"></p>
+    <div id="resultados" aria-busy="true"></div>
+  </div>
+</section>
+
+<section class="seccion seccion-especialidades" id="especialidades">
   <div class="contenedor">
     <h2 class="titulo-seccion" data-t="especial.titulo">Lo que solo <span class="acento">está aquí</span></h2>
 
     <article class="editorial">
-      <div>
+      <div class="editorial-copia">
         <h3 data-t="especial.barraTitulo">La Barra de Beanies</h3>
         <p data-t="especial.barraTexto">
           Diez cócteles de la casa que no existen en ninguna otra carta de Pucón.
@@ -119,7 +162,7 @@
     </article>
 
     <article class="editorial invertida">
-      <div>
+      <div class="editorial-copia">
         <h3 data-t="especial.skiTitulo">Ski Shot 5</h3>
         <p data-t="especial.skiTexto">
           Cinco chupitos a elección servidos sobre un esquí. Se pide para la mesa
@@ -135,54 +178,33 @@
   </div>
 </section>
 
-<section class="seccion" id="carta">
+<section class="seccion seccion-bar" id="bar">
   <div class="contenedor">
-    <h2 class="titulo-seccion" data-t="carta.titulo">La <span class="acento">carta</span></h2>
-    <p class="entradilla" data-t="carta.entradilla">
-      Todo lo que sale de la cocina y de la barra. Busca por nombre o por ingrediente:
-      escribe «camarón» y salen los platos que lo llevan.
-    </p>
-
-    <div class="controles">
-      <div class="buscador">
-        <label class="oculto-visual" for="buscar" data-t="carta.buscarEtiqueta">Buscar en la carta</label>
-        <input type="search" id="buscar" autocomplete="off"
-               data-t-attr="placeholder:carta.buscarPlaceholder"
-               placeholder="Buscar plato, trago o ingrediente…">
-        <button type="button" class="limpiar" id="limpiar" hidden aria-label="Limpiar búsqueda">&times;</button>
-      </div>
-      <div class="filtros" id="filtros" role="group" aria-label="Categorías"></div>
+    <div class="bar-intro">
+      <h2 class="titulo-seccion" data-t="bar.titulo">El <span class="acento">bar</span></h2>
+      <p class="entradilla" data-t="bar.entradilla">
+        Un sport bar con buena música. Los partidos en las pantallas, los murales de
+        Bob Marley y Amy Winehouse en la pared, y reggae hasta la madrugada.
+      </p>
     </div>
 
-    <div id="resultados" aria-live="polite"></div>
-  </div>
-</section>
-
-<section class="seccion" id="bar">
-  <div class="contenedor">
-    <h2 class="titulo-seccion" data-t="bar.titulo">El <span class="acento">bar</span></h2>
-    <p class="entradilla" data-t="bar.entradilla">
-      Un sport bar con buena música. Los partidos en las pantallas, los murales de
-      Bob Marley y Amy Winehouse en la pared, y reggae hasta la madrugada.
-    </p>
-
     <div class="bloques">
-      <div class="bloque">
-        <h4 data-t="bar.deporteTitulo">Los partidos, siempre puestos</h4>
+      <div class="bloque bloque-deporte">
+        <h3 data-t="bar.deporteTitulo">Los partidos, siempre puestos</h3>
         <p data-t="bar.deporteTexto">Pantallas repartidas por el local y la terraza.</p>
       </div>
-      <div class="bloque">
-        <h4 data-t="bar.muralTitulo">Los murales</h4>
-        <p data-t="bar.muralTexto">Bob Marley, Amy Winehouse, Snoop y Lennon pintados sobre la chapa. Y una tabla de snowboard con hibiscos sobre la puerta.</p>
+      <div class="bloque bloque-mural">
+        <h3 data-t="bar.muralTitulo">Los murales</h3>
+        <p data-t="bar.muralTexto">Bob Marley, Amy Winehouse, Snoop y Charly García pintados sobre la chapa. Y una tabla de snowboard con hibiscos sobre la puerta.</p>
       </div>
-      <div class="bloque">
-        <h4 data-t="bar.terrazaTitulo">La terraza</h4>
+      <div class="bloque bloque-terraza">
+        <h3 data-t="bar.terrazaTitulo">La terraza</h3>
         <p data-t="bar.terrazaTexto">Cubierta y con cortinas, para estar fuera también en invierno.</p>
       </div>
     </div>
 
     <div class="spotify" id="spotify" hidden>
-      <h3 class="oculto-visual" data-t="bar.musicaTitulo">Lo que suena en la barra</h3>
+      <h3 class="titulo-musica" data-t="bar.musicaTitulo">Lo que suena en la barra</h3>
       <p class="entradilla" id="musica-texto"></p>
       <iframe id="spotify-iframe" title="Lista de reproducción de Beanies &amp; Bikinis en Spotify"
               loading="lazy" allow="encrypted-media"></iframe>
@@ -190,21 +212,24 @@
   </div>
 </section>
 
-<section class="seccion" id="visita">
-  <div class="contenedor">
-    <h2 class="titulo-seccion" data-t="visita.titulo">Dónde y <span class="acento">cuándo</span></h2>
+<section class="seccion seccion-visita" id="visita">
+  <div class="contenedor visita-composicion">
+    <div class="visita-titulo">
+      <h2 class="titulo-seccion" data-t="visita.titulo">Dónde y <span class="acento">cuándo</span></h2>
+      <p class="acciones">
+        <a class="boton boton-primario" id="enlace-mapa-2" href="#" target="_blank" rel="noopener"
+           data-t="portada.comoLlegar">Cómo llegar</a>
+      </p>
+    </div>
     <div class="datos" id="datos"></div>
-    <p class="acciones" style="margin-top:var(--bb-space-4)">
-      <a class="boton boton-secundario" id="enlace-mapa-2" href="#" target="_blank" rel="noopener"
-         data-t="portada.comoLlegar">Cómo llegar</a>
-    </p>
   </div>
 </section>
 
 </main>
 
-<footer class="pie">
+<footer class="pie" id="pie">
   <div class="contenedor">
+    <img class="pie-logo" src="assets/img/logo-beanies-bikinis.png?v=20260812-brand-footer-final" width="1018" height="392" alt="Beanies &amp; Bikinis">
     <div class="redes" id="redes"></div>
     <small id="pie-texto"></small>
   </div>
@@ -218,14 +243,14 @@
     </div>
     <div class="cesta-acciones">
       <button type="button" class="cesta-vaciar" id="cesta-vaciar" data-t="cesta.vaciar">Vaciar</button>
-      <button type="button" class="boton boton-primario" id="cesta-accion" hidden></button>
+      <button type="button" class="boton boton-primario" id="cesta-accion" hidden data-t="cesta.pedir">Hacer el pedido</button>
     </div>
   </div>
 </div>
 
-<script src="assets/js/textos.js"></script>
-<script src="assets/js/pedido.js"></script>
-<script src="assets/js/carta.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="assets/js/textos.js?v=20260812-brand-footer-final"></script>
+<script src="assets/js/pedido.js?v=20260812-carta-final"></script>
+<script src="assets/js/carta.js?v=20260812-carta-final"></script>
+<script src="assets/js/app.js?v=20260812-carta-final"></script>
 </body>
 </html>

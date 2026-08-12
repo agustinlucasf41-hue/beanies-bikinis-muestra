@@ -1,4 +1,4 @@
-/* Pintado de la carta: categorías, buscador, filtro de vegetariano y estados.
+/* Pintado de la carta: categorías, filtro de vegetariano y estados.
    No sabe nada de navegación ni de horarios: solo de productos. */
 
 (function () {
@@ -7,23 +7,13 @@
 
   let carta = null;
   let alAnadir = () => {};
+  let temporizadorFiltro;
+  let actualizarCarril = () => {};
 
-  const estado = { idioma: 'es', categoria: 'todo', busqueda: '', soloVeg: false };
+  const estado = { idioma: 'es', categoria: 'todo', soloVeg: false };
+  const reduceMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   const dinero = (n) => `${carta.moneda}${n.toLocaleString('es-CL')}`;
-
-  /* Quita tildes para que "champinon" encuentre "champiñón". */
-  const normalizar = (s) =>
-    (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-
-  function coincide(producto, aguja) {
-    if (!aguja) return true;
-    const heno = normalizar(
-      [producto.nombre.es, producto.nombre.en, producto.desc?.es, producto.desc?.en, producto.numero].join(' ')
-    );
-    // Cada palabra por separado: "pizza camaron" encuentra la Camarona.
-    return aguja.split(/\s+/).filter(Boolean).every((palabra) => heno.includes(palabra));
-  }
 
   function elemento(etiqueta, clase, texto) {
     const el = document.createElement(etiqueta);
@@ -140,8 +130,71 @@
       if (!b) return;
       if (b.dataset.filtro === 'veg') estado.soloVeg = !estado.soloVeg;
       else estado.categoria = b.dataset.filtro;
-      Carta.render();
+      const resultados = document.getElementById('resultados');
+      const filtroElegido = b.dataset.filtro;
+      clearTimeout(temporizadorFiltro);
+
+      const renderizarYRestaurarFoco = () => {
+        Carta.render();
+        resultados.classList.remove('cambiando');
+        const botonActivo = document.querySelector(`[data-filtro="${CSS.escape(filtroElegido)}"]`);
+        botonActivo?.focus({ preventScroll: true });
+        if (window.matchMedia('(max-width: 900px)').matches) {
+          botonActivo?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduceMovimiento.matches ? 'auto' : 'smooth' });
+        }
+      };
+
+      if (reduceMovimiento.matches) {
+        renderizarYRestaurarFoco();
+        return;
+      }
+      resultados.setAttribute('aria-busy', 'true');
+      resultados.classList.add('cambiando');
+      temporizadorFiltro = window.setTimeout(renderizarYRestaurarFoco, 140);
     });
+  }
+
+  function configurarCarril(contenedor) {
+    const carril = contenedor.closest('.carril-filtros');
+    const anterior = carril?.querySelector('.filtro-anterior');
+    const siguiente = carril?.querySelector('.filtro-siguiente');
+    if (!carril || !anterior || !siguiente) return;
+
+    actualizarCarril = () => {
+      const maximo = Math.max(0, contenedor.scrollWidth - contenedor.clientWidth);
+      const hayIzquierda = contenedor.scrollLeft > 4;
+      const hayDerecha = contenedor.scrollLeft < maximo - 4;
+      carril.dataset.hayIzquierda = String(hayIzquierda);
+      carril.dataset.hayDerecha = String(hayDerecha);
+      anterior.disabled = !hayIzquierda;
+      siguiente.disabled = !hayDerecha;
+    };
+
+    const mover = (direccion) => {
+      contenedor.scrollBy({
+        left: direccion * Math.max(220, contenedor.clientWidth * .72),
+        behavior: reduceMovimiento.matches ? 'auto' : 'smooth',
+      });
+    };
+
+    anterior.addEventListener('click', () => mover(-1));
+    siguiente.addEventListener('click', () => mover(1));
+    contenedor.addEventListener('scroll', actualizarCarril, { passive: true });
+    contenedor.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      const botones = [...contenedor.querySelectorAll('.pestana')];
+      const actual = botones.indexOf(document.activeElement);
+      if (actual < 0) return;
+      const direccion = e.key === 'ArrowRight' ? 1 : -1;
+      const destino = botones[Math.min(botones.length - 1, Math.max(0, actual + direccion))];
+      if (destino === document.activeElement) return;
+      e.preventDefault();
+      destino.focus({ preventScroll: true });
+      destino.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduceMovimiento.matches ? 'auto' : 'smooth' });
+    });
+
+    new ResizeObserver(actualizarCarril).observe(contenedor);
+    requestAnimationFrame(actualizarCarril);
   }
 
   const Carta = {
@@ -152,14 +205,15 @@
       alAnadir = opciones.alAnadir || alAnadir;
       Carta.cestaActiva = Boolean(opciones.cestaActiva);
       escucharFiltros(document.getElementById('filtros'));
+      configurarCarril(document.getElementById('filtros'));
     },
 
     estado,
 
     render() {
       pintarFiltros(document.getElementById('filtros'));
+      requestAnimationFrame(actualizarCarril);
 
-      const aguja = normalizar(estado.busqueda.trim());
       const destino = document.getElementById('resultados');
       const trozos = [];
       let total = 0;
@@ -167,9 +221,7 @@
       for (const cat of carta.categorias) {
         if (estado.categoria !== 'todo' && estado.categoria !== cat.id) continue;
         const productos = cat.productos.filter(
-          (p) =>
-            coincide(p, aguja) &&
-            (!estado.soloVeg || (p.etiquetas || []).includes('vegetariano'))
+          (p) => !estado.soloVeg || (p.etiquetas || []).includes('vegetariano')
         );
         if (!productos.length) continue;
         total += productos.length;
@@ -184,6 +236,14 @@
       }
 
       destino.replaceChildren(...trozos);
+      destino.setAttribute('aria-busy', 'false');
+      const estadoResultados = document.getElementById('resultados-estado');
+      if (estadoResultados) {
+        const clave = total === 1 ? 'carta.producto' : 'carta.productos';
+        estadoResultados.textContent = total
+          ? `${total} ${window.t(clave, estado.idioma)}`
+          : window.t('carta.sinResultadosTitulo', estado.idioma);
+      }
     },
   };
 

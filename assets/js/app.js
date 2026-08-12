@@ -229,13 +229,20 @@
     const panel = $('#menu-movil');
     const abrir = $('#abrir-menu');
     const cerrar = $('#cerrar-menu');
+    let focoAnterior = abrir;
 
-    const alternar = (abierto) => {
+    panel.inert = true;
+    panel.setAttribute('aria-hidden', 'true');
+
+    const alternar = (abierto, devolverFoco = true) => {
+      if (abierto) focoAnterior = document.activeElement;
       panel.dataset.abierto = String(abierto);
       abrir.setAttribute('aria-expanded', String(abierto));
+      panel.setAttribute('aria-hidden', String(!abierto));
+      panel.inert = !abierto;
       document.body.style.overflow = abierto ? 'hidden' : '';
       if (abierto) cerrar.focus();
-      else abrir.focus();
+      else if (devolverFoco && focoAnterior instanceof HTMLElement) focoAnterior.focus();
     };
 
     abrir.addEventListener('click', () => alternar(true));
@@ -243,11 +250,28 @@
 
     // Al elegir destino, el panel se quita de en medio.
     for (const a of panel.querySelectorAll('a')) {
-      a.addEventListener('click', () => alternar(false));
+      a.addEventListener('click', () => alternar(false, false));
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && panel.dataset.abierto === 'true') alternar(false);
+      if (panel.dataset.abierto !== 'true') return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        alternar(false);
+        return;
+      }
+      if (e.key !== 'Tab') return;
+
+      const enfocables = [...panel.querySelectorAll('a[href], button:not([disabled])')];
+      const primero = enfocables[0];
+      const ultimo = enfocables.at(-1);
+      if (e.shiftKey && document.activeElement === primero) {
+        e.preventDefault();
+        ultimo.focus();
+      } else if (!e.shiftKey && document.activeElement === ultimo) {
+        e.preventDefault();
+        primero.focus();
+      }
     });
   }
 
@@ -318,43 +342,41 @@
     window.Pedido.suscribir(pintarCesta);
   }
 
-  /* ---------- Buscador ---------- */
+  /* ---------- Arranque ---------- */
 
-  function engancharBuscador() {
-    const input = $('#buscar');
-    const limpiar = $('#limpiar');
-    let temporizador;
-
-    input.addEventListener('input', () => {
-      limpiar.hidden = input.value === '';
-      clearTimeout(temporizador);
-      // Pequeña espera: 129 productos se repintan rápido, pero no en cada tecla.
-      temporizador = setTimeout(() => {
-        window.Carta.estado.busqueda = input.value;
-        window.Carta.render();
-      }, 120);
-    });
-
-    limpiar.addEventListener('click', () => {
-      input.value = '';
-      limpiar.hidden = true;
-      window.Carta.estado.busqueda = '';
-      window.Carta.render();
-      input.focus();
-    });
+  async function cargarJSON(ruta) {
+    const respuesta = await fetch(ruta);
+    if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
+    return respuesta.json();
   }
 
-  /* ---------- Arranque ---------- */
+  function mostrarErrorCarta() {
+    const destino = document.getElementById('resultados');
+    const caja = document.createElement('div');
+    caja.className = 'sin-resultados';
+    const titulo = document.createElement('b');
+    titulo.textContent = window.t('carta.errorTitulo', idioma);
+    const texto = document.createElement('span');
+    texto.textContent = window.t('carta.errorTexto', idioma);
+    const reintentar = document.createElement('button');
+    reintentar.type = 'button';
+    reintentar.className = 'boton boton-secundario';
+    reintentar.textContent = window.t('carta.reintentar', idioma);
+    reintentar.addEventListener('click', () => window.location.reload());
+    caja.append(titulo, texto, reintentar);
+    destino.replaceChildren(caja);
+    destino.setAttribute('aria-busy', 'false');
+    document.getElementById('resultados-estado').textContent = titulo.textContent;
+  }
 
   async function iniciar() {
     try {
       [carta, negocio] = await Promise.all([
-        fetch('datos/carta.json').then((r) => r.json()),
-        fetch('datos/negocio.json').then((r) => r.json()),
+        cargarJSON('datos/carta.json'),
+        cargarJSON('datos/negocio.json'),
       ]);
     } catch (e) {
-      document.getElementById('resultados').textContent =
-        'No se ha podido cargar la carta. Recarga la página, por favor.';
+      mostrarErrorCarta();
       return;
     }
 
@@ -371,7 +393,6 @@
     pintarEspecialidades();
     datosEstructurados();
     window.Carta.render();
-    engancharBuscador();
     engancharCesta();
     engancharNav();
     engancharMenuMovil();
